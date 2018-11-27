@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Home } from "./Home";
 
+const root = "portfolio";
+
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 export class App extends React.Component {
@@ -9,7 +11,7 @@ export class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path="/" render={() => <Home />} />
+          <Route exact={true} path={`/${root}`} render={() => <Home />} />
         </Switch>
       </BrowserRouter>
     );
