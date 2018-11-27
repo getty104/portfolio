@@ -1,15 +1,17 @@
 import * as React from "react";
-import "../styles/App.css";
 
+import { Home } from "./Home";
+
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 export class App extends React.Component {
   public render() {
     return (
-      <div className="App">
-        <p className="App-intro">
-          To get started, edit <code>src/App.tsx</code> and save to reload.
-        </p>
-      </div>
+      <BrowserRouter>
+        <Switch>
+          <Route exact={true} path="/" render={() => <Home />} />
+        </Switch>
+      </BrowserRouter>
     );
   }
 }
