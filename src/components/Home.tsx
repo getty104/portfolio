@@ -1,13 +1,14 @@
 import * as React from "react";
-import "../styles/App.css";
+import "../styles/index.scss";
 
 export class Home extends React.Component {
   public render() {
     return (
-      <div className="Home">
-        <p>
-          To get started, edit <code>src/Home.tsx</code> and save to reload.
-        </p>
+      <div>
+        <a className="button">Button</a>
+        <a className="button is-primary">Primary button</a>
+        <a className="button is-large">Large button</a>
+        <a className="button is-loading">Loading button</a>
       </div>
     );
   }
