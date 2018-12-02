@@ -1,0 +1,14 @@
+@mixin container-setting($container-size) {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: flex-start;
+  max-width: $container-size;
+  margin: auto;
+}
+
+.container {
+  @include container-setting($break-point-m);
+  @include viewport-s {
+    @include container-setting($break-point-s);
+  }
+}

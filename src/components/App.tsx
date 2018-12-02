@@ -2,6 +2,8 @@ import * as React from "react";
 
 import { Home } from "./Home";
 
+import "../styles/index.scss";
+
 const root = "portfolio";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";

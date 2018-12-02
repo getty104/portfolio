@@ -1,0 +1,28 @@
+.hm {
+  &-Bar {
+    width: 1px;
+    height: 200px;
+    margin: auto;
+
+    &_profile {
+      background-color: black;
+    }
+
+    &_skill {
+      background-color: black;
+    }
+
+    &_contents {
+      background-color: black;
+    }
+
+    &_access {
+      background-color: black;
+    }
+
+    .active {
+      width: 5px;
+      height: 320px;
+    }
+  }
+}
