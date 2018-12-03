@@ -13,6 +13,25 @@
   margin: auto;
 }
 
+@keyframes open-bar {
+  from {
+    @include bar-inactive
+  }
+  to {
+    @include bar-active
+  }
+}
+
+
+@keyframes close-bar {
+  from {
+    @include bar-active
+  }
+  to {
+    @include bar-inactive
+  }
+}
+
 .hm {
   &-Bar {
     @extend .container;
@@ -23,40 +42,48 @@
     &_profile {
       @include bar-inactive;
       background: #52D6FF;
+      animation: close-bar 1s;
 
       &:hover {
         @include bar-active;
         background: linear-gradient(#52D6FF, #D152FF);
+        animation: open-bar 1s;
       }
     }
 
     &_skill {
       @include bar-inactive;
       background: #D152FF;
+      animation: close-bar 1s;
 
       &:hover {
         @include bar-active;
         background: linear-gradient(#D152FF, #FF7A52);
+        animation: open-bar 1s;
       }
     }
 
     &_contents {
       @include bar-inactive;
       background: #FF7A52;
+      animation: close-bar 1s;
 
       &:hover {
         @include bar-active;
         background: linear-gradient(#FF7A52, #80FF52);
+        animation: open-bar 1s;
       }
     }
 
     &_access {
       @include bar-inactive;
       background: #80FF52;
+      animation: close-bar 1s;
 
       &:hover {
         @include bar-active;
         background: linear-gradient(#80FF52, #52D6FF);
+        animation: open-bar 1s;
       }
     }
   }
