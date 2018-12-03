@@ -1,36 +1,42 @@
 
-@mixin bar-inactive {
+@mixin bar-inactive($head-color, $bottom-color) {
   width: 8px;
   height: 8px;
   border-radius: 50%;
+  background: linear-gradient($head-color, $bottom-color);
+  backface-visibility: hidden;
   margin: auto;
 }
 
-@mixin bar-active {
+@mixin bar-active($head-color, $bottom-color) {
   width: 8px;
   height: 400px;
   border-radius: 0%;
+  background: linear-gradient($head-color, $bottom-color);
   margin: auto;
 }
 
-@keyframes open-bar {
-  from {
-    @include bar-inactive
+@mixin bar-animation($bar-name, $head-color, $bottom-color) {
+  @keyframes #{$bar-name}-open {
+    from {
+      @include bar-inactive($head-color, $bottom-color);
+    }
+    to {
+      @include bar-active($head-color, $bottom-color);
+    }
   }
-  to {
-    @include bar-active
+
+
+  @keyframes #{$bar-name}-close {
+    from {
+      @include bar-active($head-color, $bottom-color);
+    }
+    to {
+      @include bar-inactive($head-color, $bottom-color);
+    }
   }
 }
 
-
-@keyframes close-bar {
-  from {
-    @include bar-active
-  }
-  to {
-    @include bar-inactive
-  }
-}
 
 .hm {
   &-Bar {
@@ -40,50 +46,46 @@
     height: 800px;
 
     &_profile {
-      @include bar-inactive;
-      background: #52D6FF;
-      animation: close-bar 1s;
+      @include bar-animation("profile", #52D6FF, #D152FF);
+      @include bar-inactive(#52D6FF, #D152FF);
+      animation: profile-close 1s;
 
       &:hover {
-        @include bar-active;
-        background: linear-gradient(#52D6FF, #D152FF);
-        animation: open-bar 1s;
+        @include bar-active(#52D6FF, #D152FF);
+        animation: profile-open 1s;
       }
     }
 
     &_skill {
-      @include bar-inactive;
-      background: #D152FF;
-      animation: close-bar 1s;
+      @include bar-animation("skill", #D152FF, #FF7A52);
+      @include bar-inactive(#D152FF, #FF7A52);
+      animation: skill-close 1s;
 
       &:hover {
-        @include bar-active;
-        background: linear-gradient(#D152FF, #FF7A52);
-        animation: open-bar 1s;
+        @include bar-active(#D152FF, #FF7A52);
+        animation: skill-open 1s;
       }
     }
 
     &_contents {
-      @include bar-inactive;
-      background: #FF7A52;
-      animation: close-bar 1s;
+      @include bar-animation("contents", #FF7A52, #80FF52);
+      @include bar-inactive(#FF7A52, #80FF52);
+      animation: contents-close 1s;
 
       &:hover {
-        @include bar-active;
-        background: linear-gradient(#FF7A52, #80FF52);
-        animation: open-bar 1s;
+        @include bar-active(#FF7A52, #80FF52);
+        animation: contents-open 1s;
       }
     }
 
     &_access {
-      @include bar-inactive;
-      background: #80FF52;
-      animation: close-bar 1s;
+      @include bar-animation("access", #80FF52, #52D6FF);
+      @include bar-inactive(#80FF52, #52D6FF);
+      animation: access-close 1s;
 
       &:hover {
-        @include bar-active;
-        background: linear-gradient(#80FF52, #52D6FF);
-        animation: open-bar 1s;
+        @include bar-active(#80FF52, #52D6FF);
+        animation: access-open 1s;
       }
     }
   }
