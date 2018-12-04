@@ -97,7 +97,7 @@
 
       &:hover {
         .hm-Content_access-bar {
-          @include bar-active(#80FF52, #52D6FF);
+          @include bar-active(#FF7A52, #80FF52);
           transition: all .5s ease-out;
         }
 
@@ -108,7 +108,7 @@
       }
 
       &-bar {
-        @include bar-inactive(#80FF52, #52D6FF);
+        @include bar-inactive(#FF7A52, #80FF52);
         transition: all .5s ease-out;
       }
 
@@ -130,7 +130,7 @@
 
       &:hover {
         .hm-Content_blog-bar {
-        @include bar-active(#FF7A52, #80FF52);
+          @include bar-active(#80FF52, #52D6FF);
           transition: all .5s ease-out;
         }
 
@@ -141,7 +141,7 @@
       }
 
       &-bar {
-        @include bar-inactive(#FF7A52, #80FF52);
+        @include bar-inactive(#80FF52, #52D6FF);
         transition: all .5s ease-out;
       }
 
