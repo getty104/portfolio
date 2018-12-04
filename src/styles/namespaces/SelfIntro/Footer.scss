@@ -1,11 +1,24 @@
-.hm {
+.si {
   &-Footer {
     @extend .grid;
-    justify-content: center;
-    align-items: center;
+    margin-top: 100px;
 
     &_column {
-        margin: auto;
+      width: 100px;
+      margin: auto;
+      color: #000;
+      text-decoration: none;
+
+      @include keyframes(si-Footer_column) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(si-Footer_column 1s ease 1s);
     }
   }
 }
