@@ -46,46 +46,42 @@
     height: 800px;
 
     &_profile {
-      @include bar-animation("profile", #52D6FF, #D152FF);
       @include bar-inactive(#52D6FF, #D152FF);
-      animation: profile-close 1s;
+      transition: all .5s ease-out;
 
       &:hover {
         @include bar-active(#52D6FF, #D152FF);
-        animation: profile-open 1s;
+        transition: all .5s ease-out;
       }
     }
 
     &_skill {
-      @include bar-animation("skill", #D152FF, #FF7A52);
       @include bar-inactive(#D152FF, #FF7A52);
-      animation: skill-close 1s;
+      transition: all .5s ease-out;
 
       &:hover {
         @include bar-active(#D152FF, #FF7A52);
-        animation: skill-open 1s;
+        transition: all .5s ease-out;
       }
     }
 
     &_contents {
-      @include bar-animation("contents", #FF7A52, #80FF52);
       @include bar-inactive(#FF7A52, #80FF52);
-      animation: contents-close 1s;
+      transition: all .5s ease-out;
 
       &:hover {
-        @include bar-active(#FF7A52, #80FF52);
-        animation: contents-open 1s;
+      @include bar-active(#FF7A52, #80FF52);
+      transition: all .5s ease-out;
       }
     }
 
     &_access {
-      @include bar-animation("access", #80FF52, #52D6FF);
       @include bar-inactive(#80FF52, #52D6FF);
-      animation: access-close 1s;
+      transition: all .5s ease-out;
 
       &:hover {
         @include bar-active(#80FF52, #52D6FF);
-        animation: access-open 1s;
+        transition: all .5s ease-out;
       }
     }
   }
