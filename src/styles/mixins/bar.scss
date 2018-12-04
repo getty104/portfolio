@@ -1,0 +1,16 @@
+@mixin bar-inactive($head-color, $bottom-color) {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: linear-gradient($head-color, $bottom-color);
+  backface-visibility: hidden;
+  margin: auto;
+}
+
+@mixin bar-active($head-color, $bottom-color) {
+  width: 8px;
+  height: 400px;
+  border-radius: 0%;
+  background: linear-gradient($head-color, $bottom-color);
+  margin: auto;
+}

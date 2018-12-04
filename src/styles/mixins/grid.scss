@@ -1,4 +1,4 @@
-@mixin container-setting($container-size) {
+@mixin grid-setting($container-size) {
   display: flex;
   flex-flow: row wrap;
   align-items: flex-start;
@@ -7,9 +7,9 @@
   margin: auto;
 }
 
-.container {
-  @include container-setting($break-point-m);
+.grid {
+  @include grid-setting($break-point-m);
   @include viewport-s {
-    @include container-setting($break-point-s);
+    @include grid-setting($break-point-s);
   }
 }
