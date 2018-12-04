@@ -6,7 +6,7 @@ export class Home extends React.Component {
     return (
       <div>
         <div className="hm-Content">
-          <Link to={"portfolio/selfintro"} className="hm-Content_profile">
+          <Link to={"/portfolio/selfintro"} className="hm-Content_profile">
             <div className="hm-Content_profile-bar" />
             <div className="hm-Content_profile-title">自己紹介</div>
           </Link>
