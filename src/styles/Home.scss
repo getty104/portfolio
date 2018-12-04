@@ -44,7 +44,7 @@
 
       &-bar {
         @include bar-inactive(#52D6FF, #D152FF);
-        transition: all .5s ease-out .5s;
+        transition: all .5s ease-out;
       }
 
       &-title {
@@ -76,7 +76,7 @@
 
       &-bar {
         @include bar-inactive(#D152FF, #FF7A52);
-        transition: all .5s ease-out .5s;
+        transition: all .5s ease-out;
       }
 
       &-title {
@@ -108,7 +108,7 @@
 
       &-bar {
         @include bar-inactive(#FF7A52, #80FF52);
-        transition: all .5s ease-out .5s;
+        transition: all .5s ease-out;
       }
 
       &-title {
@@ -140,7 +140,7 @@
 
       &-bar {
         @include bar-inactive(#80FF52, #52D6FF);
-        transition: all .5s ease-out .5s;
+        transition: all .5s ease-out;
       }
 
       &-title {
