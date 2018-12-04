@@ -46,42 +46,130 @@
     height: 800px;
 
     &_profile {
-      @include bar-inactive(#52D6FF, #D152FF);
-      transition: all .5s ease-out;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin: auto;
+      text-decoration: none;
 
       &:hover {
-        @include bar-active(#52D6FF, #D152FF);
+        .hm-Bar_profile-bar {
+          @include bar-active(#52D6FF, #D152FF);
+          transition: all .5s ease-out;
+        }
+
+        .hm-Bar_profile-title {
+          opacity: 1;
+          transition: all .5s ease-out .5s;
+        }
+      }
+
+      &-bar {
+        @include bar-inactive(#52D6FF, #D152FF);
+        transition: all .5s ease-out .5s;
+      }
+
+      &-title {
+        writing-mode: vertical-rl; 
+        opacity: 0;
         transition: all .5s ease-out;
+        font-size: 1.5rem;
       }
     }
 
     &_skill {
-      @include bar-inactive(#D152FF, #FF7A52);
-      transition: all .5s ease-out;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin: auto;
+      text-decoration: none;
 
       &:hover {
-        @include bar-active(#D152FF, #FF7A52);
+        .hm-Bar_skill-bar {
+          @include bar-active(#D152FF, #FF7A52);
+          transition: all .5s ease-out;
+        }
+
+        .hm-Bar_skill-title {
+          opacity: 1;
+          transition: all .5s ease-out .5s;
+        }
+      }
+
+      &-bar {
+        @include bar-inactive(#D152FF, #FF7A52);
+        transition: all .5s ease-out .5s;
+      }
+
+      &-title {
+        writing-mode: vertical-rl; 
+        opacity: 0;
         transition: all .5s ease-out;
+        font-size: 1.5rem;
       }
     }
 
     &_contents {
-      @include bar-inactive(#FF7A52, #80FF52);
-      transition: all .5s ease-out;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin: auto;
+      text-decoration: none;
 
       &:hover {
-      @include bar-active(#FF7A52, #80FF52);
-      transition: all .5s ease-out;
+        .hm-Bar_contents-bar {
+        @include bar-active(#FF7A52, #80FF52);
+          transition: all .5s ease-out;
+        }
+
+        .hm-Bar_contents-title {
+          opacity: 1;
+          transition: all .5s ease-out .5s;
+        }
+      }
+
+      &-bar {
+        @include bar-inactive(#FF7A52, #80FF52);
+        transition: all .5s ease-out .5s;
+      }
+
+      &-title {
+        writing-mode: vertical-rl; 
+        opacity: 0;
+        transition: all .5s ease-out;
+        font-size: 1.5rem;
       }
     }
 
     &_access {
-      @include bar-inactive(#80FF52, #52D6FF);
-      transition: all .5s ease-out;
+      display: flex;
+      justify-content: end;
+      align-items: center;
+      margin: auto;
+      text-decoration: none;
 
       &:hover {
-        @include bar-active(#80FF52, #52D6FF);
+        .hm-Bar_access-bar {
+          @include bar-active(#80FF52, #52D6FF);
+          transition: all .5s ease-out;
+        }
+
+        .hm-Bar_access-title {
+          opacity: 1;
+          transition: all .5s ease-out .5s;
+        }
+      }
+
+      &-bar {
+        @include bar-inactive(#80FF52, #52D6FF);
+        transition: all .5s ease-out .5s;
+      }
+
+      &-title {
+        writing-mode: vertical-rl; 
+        opacity: 0;
         transition: all .5s ease-out;
+        font-size: 1.5rem;
       }
     }
   }
