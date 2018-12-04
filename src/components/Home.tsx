@@ -1,14 +1,15 @@
 import * as React from "react";
+import { Link } from "react-router-dom";
 
 export class Home extends React.Component {
   public render() {
     return (
       <div>
         <div className="hm-Content">
-          <a className="hm-Content_profile" href="#">
+          <Link to={"portfolio/selfintro"} className="hm-Content_profile">
             <div className="hm-Content_profile-bar" />
             <div className="hm-Content_profile-title">自己紹介</div>
-          </a>
+          </Link>
           <a className="hm-Content_skill" href="#">
             <div className="hm-Content_skill-bar" />
             <div className="hm-Content_skill-title">スキル</div>

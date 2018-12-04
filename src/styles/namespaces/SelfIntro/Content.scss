@@ -1,0 +1,60 @@
+.si {
+  &-Content {
+    @extend .grid;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+
+    &_title {
+      writing-mode: vertical-rl;
+      font-size: 3.2rem;
+      color: #000;
+      width: 400px;
+
+      @include keyframes(si-Content_title) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(si-Content_title 1s ease 1s);
+    }
+
+    &_bar {
+      @include keyframes(si-Content_bar) {
+        from {
+          @include bar-inactive(#52D6FF, #D152FF);
+        }
+        to {
+          @include bar-active(#52D6FF, #D152FF);
+        }
+      }
+
+      @include animation(si-Content_bar 1s);
+    }
+
+    &_description {
+      font-size: 1.2rem;
+      color: #000;
+      width: 400px;
+      height: 480px;
+      overflow: scroll;
+      line-height : 1.5;
+      letter-spacing : 0.1em;
+
+      @include keyframes(si-Content_description) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(si-Content_description 1s ease 1s);
+    }
+  }
+}

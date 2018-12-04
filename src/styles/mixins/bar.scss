@@ -14,3 +14,11 @@
   background: linear-gradient($head-color, $bottom-color);
   margin: auto;
 }
+
+@mixin bar-side($head-color, $bottom-color) {
+  width: 400px;
+  height: 12px;
+  border-radius: 0%;
+  background: linear-gradient(90deg, $head-color, $bottom-color);
+  margin: auto;
+}
