@@ -16,30 +16,8 @@
   margin: auto;
 }
 
-@mixin bar-animation($bar-name, $head-color, $bottom-color) {
-  @keyframes #{$bar-name}-open {
-    from {
-      @include bar-inactive($head-color, $bottom-color);
-    }
-    to {
-      @include bar-active($head-color, $bottom-color);
-    }
-  }
-
-
-  @keyframes #{$bar-name}-close {
-    from {
-      @include bar-active($head-color, $bottom-color);
-    }
-    to {
-      @include bar-inactive($head-color, $bottom-color);
-    }
-  }
-}
-
-
 .hm {
-  &-Bar {
+  &-Content {
     @extend .container;
     justify-content: center;
     align-items: center;
@@ -53,12 +31,12 @@
       text-decoration: none;
 
       &:hover {
-        .hm-Bar_profile-bar {
+        .hm-Content_profile-bar {
           @include bar-active(#52D6FF, #D152FF);
           transition: all .5s ease-out;
         }
 
-        .hm-Bar_profile-title {
+        .hm-Content_profile-title {
           opacity: 1;
           transition: all .5s ease-out .5s;
         }
@@ -85,12 +63,12 @@
       text-decoration: none;
 
       &:hover {
-        .hm-Bar_skill-bar {
+        .hm-Content_skill-bar {
           @include bar-active(#D152FF, #FF7A52);
           transition: all .5s ease-out;
         }
 
-        .hm-Bar_skill-title {
+        .hm-Content_skill-title {
           opacity: 1;
           transition: all .5s ease-out .5s;
         }
@@ -109,7 +87,7 @@
       }
     }
 
-    &_contents {
+    &_blog {
       display: flex;
       justify-content: end;
       align-items: center;
@@ -117,12 +95,12 @@
       text-decoration: none;
 
       &:hover {
-        .hm-Bar_contents-bar {
+        .hm-Content_blog-bar {
         @include bar-active(#FF7A52, #80FF52);
           transition: all .5s ease-out;
         }
 
-        .hm-Bar_contents-title {
+        .hm-Content_blog-title {
           opacity: 1;
           transition: all .5s ease-out .5s;
         }
@@ -149,12 +127,12 @@
       text-decoration: none;
 
       &:hover {
-        .hm-Bar_access-bar {
+        .hm-Content_access-bar {
           @include bar-active(#80FF52, #52D6FF);
           transition: all .5s ease-out;
         }
 
-        .hm-Bar_access-title {
+        .hm-Content_access-title {
           opacity: 1;
           transition: all .5s ease-out .5s;
         }
