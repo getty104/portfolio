@@ -4,9 +4,9 @@ import { Home } from "./Home";
 
 import "../styles/index.scss";
 
-const root = "portfolio";
-
 import { BrowserRouter, Route, Switch } from "react-router-dom";
+import { productsPath, rootPath, selfIntroPath } from "../routes";
+import { Product } from "./Product";
 import { SelfIntro } from "./SelfIntro";
 
 export class App extends React.Component {
@@ -14,11 +14,16 @@ export class App extends React.Component {
     return (
       <BrowserRouter>
         <Switch>
-          <Route exact={true} path={`/${root}`} render={() => <Home />} />
+          <Route exact={true} path={rootPath()} render={() => <Home />} />
           <Route
             exact={true}
-            path={`/${root}/selfintro`}
+            path={selfIntroPath()}
             render={() => <SelfIntro />}
+          />
+          <Route
+            exact={true}
+            path={productsPath()}
+            render={() => <Product />}
           />
         </Switch>
       </BrowserRouter>

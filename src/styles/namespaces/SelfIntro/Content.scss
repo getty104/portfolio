@@ -46,7 +46,8 @@
         width: 320px;
         height: 320px;
         background-image: url("./images/big.jpg");
-        background-size: cover;
+        background-size: contain;
+        background-repeat: no-repeat; 
         @include keyframes(si-Content_description-image) {
           from {
             opacity: 0;
@@ -66,7 +67,6 @@
         letter-spacing : 0.1em;
         max-width: 400px;
         margin: auto;
-        margin-top: 80px;
 
 
         @include keyframes(si-Content_description-text) {

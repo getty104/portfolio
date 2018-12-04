@@ -1,0 +1,110 @@
+.pd {
+  &-Content {
+    @extend .grid;
+    display: block;
+    margin-top: 120px;
+
+    &_title {
+      text-align: center;
+      font-size: 3.2rem;
+      color: #000;
+
+      @include keyframes(pd-Content_title) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(pd-Content_title 1s ease 1s);
+    }
+
+    &_bar {
+      @include keyframes(pd-Content_bar) {
+        from {
+          @include bar-side-active(#D152FF, #FF7A52);
+          transform: rotate(90deg);
+        }
+        to {
+          @include bar-side-active(#D152FF, #FF7A52);
+          transform: rotate(0deg);
+        }
+      }
+
+      @include animation(pd-Content_bar 1s);
+    }
+
+    &_description {
+      margin-top: 40px;
+      display: flex;
+      flex-flow: row wrap;
+
+      &-image {
+        margin: auto;
+        width: 318px;
+        height: 240px;
+        border: solid;
+        border-color: #888;
+        border-width: 1px;
+
+        @include keyframes(pd-Content_description-image) {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @include animation(pd-Content_description-image 1s ease 1s);
+      }
+
+      &-text {
+        font-size: 1.0rem;
+        color: #000;
+        line-height : 1.5;
+        letter-spacing : 0.1em;
+        width: 320px;
+        margin: 0 auto;
+
+
+        @include keyframes(pd-Content_description-text) {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @include animation(pd-Content_description-text 1s ease 1s);
+      }
+
+      &-other {
+        h2 {
+          text-align: center;
+        }
+        font-size: 1.0rem;
+        color: #000;
+        line-height : 1.5;
+        letter-spacing : 0.1em;
+        max-width: 640px;
+        margin: 0 auto;
+
+
+        @include keyframes(pd-Content_description-other) {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @include animation(pd-Content_description-other 1s ease 1s);
+      }
+    }
+  }
+}

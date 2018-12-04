@@ -1,4 +1,4 @@
-.si {
+.pd {
   &-Footer {
     @extend .grid;
     margin-top: 80px;
@@ -7,9 +7,9 @@
     &_column {
       width: 100px;
       margin: auto;
+      text-align: center;
       color: #000;
       text-decoration: none;
-      text-align: center;
 
       @include keyframes(si-Footer_column) {
         from {
