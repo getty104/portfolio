@@ -12,13 +12,13 @@ export class Home extends React.Component {
           <div className="hm-Content_skill-bar" />
           <div className="hm-Content_skill-title">スキル</div>
         </a>
-        <a className="hm-Content_blog" href="#">
-          <div className="hm-Content_blog-bar" />
-          <div className="hm-Content_blog-title">ブログ</div>
-        </a>
         <a className="hm-Content_access" href="#">
           <div className="hm-Content_access-bar" />
           <div className="hm-Content_access-title">アクセス</div>
+        </a>
+        <a className="hm-Content_blog" href="#">
+          <div className="hm-Content_blog-bar" />
+          <div className="hm-Content_blog-title">ブログ</div>
         </a>
       </div>
     );
