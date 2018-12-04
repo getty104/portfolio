@@ -33,7 +33,6 @@ export class Product extends React.Component {
                 言語：Ruby, TypeScript, SQL, Elixir, Java, Solidity, python3, C++ <br />
                 フレームワーク： Rails, React, hyperapp, Phoenix <br />
                 ツール： BigQuery, Docker, Vagrant, GraphQL <br />
-                Rails, React, TypeScriptを用いた開発の経験がもっとも多いです。 <br />
                 最近は関数型言語とドメイン駆動設計に興味があります。
             </div>
           </div>
