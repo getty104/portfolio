@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { productsPath, selfIntroPath } from "../routes";
+import { accessPath, productsPath, selfIntroPath } from "../routes";
 
 export class Home extends React.Component {
   public render() {
@@ -15,10 +15,10 @@ export class Home extends React.Component {
             <div className="hm-Content_product-bar" />
             <div className="hm-Content_product-title">プロダクト</div>
           </Link>
-          <a className="hm-Content_access" href="#">
+          <Link to={accessPath()} className="hm-Content_access">
             <div className="hm-Content_access-bar" />
             <div className="hm-Content_access-title">アクセス</div>
-          </a>
+          </Link>
           <a className="hm-Content_blog" href="#">
             <div className="hm-Content_blog-bar" />
             <div className="hm-Content_blog-title">Coming soon</div>
