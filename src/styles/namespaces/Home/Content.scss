@@ -150,7 +150,7 @@
           @include animation(hm-Home_blog-open-bar .3s ease-out);
         }
 
-        .hm-Content_access-title {
+        .hm-Content_blog-title {
           @include animation(hm-Home_blog-open-text .3s ease-out .3s);
         }
       }
