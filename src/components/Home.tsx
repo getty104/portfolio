@@ -3,6 +3,10 @@ import { Link } from "react-router-dom";
 import { accessPath, productsPath, selfIntroPath } from "../routes";
 
 export class Home extends React.Component {
+  public componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   public render() {
     return (
       <div>

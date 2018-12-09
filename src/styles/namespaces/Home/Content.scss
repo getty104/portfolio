@@ -3,9 +3,52 @@
     @extend .grid;
     justify-content: center;
     align-items: center;
-    height: 800px;
+    height: 100vh;
+
+    @mixin setup-animation($keyframes-name, $head-color, $tail-color) {
+      @include keyframes(#{$keyframes-name}-close-bar) {
+        from {
+          @include bar-active($head-color, $tail-color);
+        }
+
+        to {
+          @include bar-inactive($head-color, $tail-color);
+        }
+      }
+
+      @include keyframes(#{$keyframes-name}-open-bar) {
+        from {
+          @include bar-inactive($head-color, $tail-color);
+        }
+
+        to {
+          @include bar-active($head-color, $tail-color);
+        }
+      }
+
+      @include keyframes(#{$keyframes-name}-close-text) {
+        from {
+          opacity: 1;
+        }
+
+        to {
+          opacity: 0;
+        }
+      }
+
+      @include keyframes(#{$keyframes-name}-open-text) {
+        from {
+          opacity: 0;
+        }
+
+        to {
+          opacity: 1;
+        }
+      }
+    }
 
     &_profile {
+      @include setup-animation(hm-Home_profile,#52D6FF, #D152FF);
       display: flex;
       justify-content: end;
       align-items: center;
@@ -14,31 +57,28 @@
 
       &:hover {
         .hm-Content_profile-bar {
-          @include bar-active(#52D6FF, #D152FF);
-          transition: all .2s ease-out;
+          @include animation(hm-Home_profile-open-bar .3s ease-out);
         }
 
         .hm-Content_profile-title {
-          opacity: 1;
-          transition: all .2s ease-out .2s;
+          @include animation(hm-Home_profile-open-text .3s ease-out .3s);
         }
       }
 
       &-bar {
-        @include bar-inactive(#52D6FF, #D152FF);
-        transition: all .2s ease-out;
+        @include animation(hm-Home_profile-close-bar .3s ease-out .4s);
       }
 
       &-title {
         writing-mode: vertical-rl;
-        opacity: 0;
-        transition: all .2s ease-out;
         font-size: 1.5rem;
         color: #000;
+        @include animation(hm-Home_profile-close-text .4s ease-in);
       }
     }
 
     &_product {
+      @include setup-animation(hm-Home_product, #D152FF, #FF7A52);
       display: flex;
       justify-content: end;
       align-items: center;
@@ -47,31 +87,28 @@
 
       &:hover {
         .hm-Content_product-bar {
-          @include bar-active(#D152FF, #FF7A52);
-          transition: all .2s ease-out;
+          @include animation(hm-Home_product-open-bar .3s ease-out);
         }
 
         .hm-Content_product-title {
-          opacity: 1;
-          transition: all .2s ease-out .2s;
+          @include animation(hm-Home_product-open-text .3s ease-out .3s);
         }
       }
 
       &-bar {
-        @include bar-inactive(#D152FF, #FF7A52);
-        transition: all .2s ease-out;
+        @include animation(hm-Home_product-close-bar .3s ease-out .4s);
       }
 
       &-title {
         writing-mode: vertical-rl;
-        opacity: 0;
-        transition: all .2s ease-out;
         font-size: 1.5rem;
         color: #000;
+        @include animation(hm-Home_product-close-text .4s ease-in);
       }
     }
 
     &_access {
+      @include setup-animation(hm-Home_access, #FF7A52, #80FF52);
       display: flex;
       justify-content: end;
       align-items: center;
@@ -80,31 +117,28 @@
 
       &:hover {
         .hm-Content_access-bar {
-          @include bar-active(#FF7A52, #80FF52);
-          transition: all .2s ease-out;
+          @include animation(hm-Home_access-open-bar .3s ease-out);
         }
 
         .hm-Content_access-title {
-          opacity: 1;
-          transition: all .2s ease-out .2s;
+          @include animation(hm-Home_access-open-text .3s ease-out .3s);
         }
       }
 
       &-bar {
-        @include bar-inactive(#FF7A52, #80FF52);
-        transition: all .2s ease-out;
+        @include animation(hm-Home_access-close-bar .3s ease-out .4s);
       }
 
       &-title {
         writing-mode: vertical-rl;
-        opacity: 0;
-        transition: all .2s ease-out;
         font-size: 1.5rem;
         color: #000;
+        @include animation(hm-Home_access-close-text .4s ease-in);
       }
     }
 
     &_blog {
+      @include setup-animation(hm-Home_blog, #80FF52, #52D6FF);
       display: flex;
       justify-content: end;
       align-items: center;
@@ -113,27 +147,23 @@
 
       &:hover {
         .hm-Content_blog-bar {
-          @include bar-active(#80FF52, #52D6FF);
-          transition: all .2s ease-out;
+          @include animation(hm-Home_blog-open-bar .3s ease-out);
         }
 
-        .hm-Content_blog-title {
-          opacity: 1;
-          transition: all .2s ease-out .2s;
+        .hm-Content_access-title {
+          @include animation(hm-Home_blog-open-text .3s ease-out .3s);
         }
       }
 
       &-bar {
-        @include bar-inactive(#80FF52, #52D6FF);
-        transition: all .2s ease-out;
+        @include animation(hm-Home_blog-close-bar .3s ease-out .4s);
       }
 
       &-title {
         writing-mode: vertical-rl;
-        opacity: 0;
-        transition: all .2s ease-out;
         font-size: 1.5rem;
         color: #000;
+        @include animation(hm-Home_blog-close-text .4s ease-in);
       }
     }
   }

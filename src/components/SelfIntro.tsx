@@ -4,6 +4,10 @@ import { accessPath, productsPath, rootPath } from "../routes";
 
 /* tslint:disable */
 export class SelfIntro extends React.Component {
+  public componentDidMount() {
+    window.scrollTo(0, 0);
+  }
+
   public render() {
     return (
       <div>
