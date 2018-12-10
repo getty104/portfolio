@@ -17,7 +17,7 @@ export class Product extends React.Component {
           <div className="pd-Content_title">プロダクト</div>
           <div className="pd-Content_bar" />
           <div className="pd-Content_description">
-            <a href="https://getty104.github.io/portfolio" target="_blank"><img src={product1} className="pd-Content_description-image"/></a>
+            <a href="https://getty104.github.io" target="_blank"><img src={product1} className="pd-Content_description-image"/></a>
             <div className="pd-Content_description-text">
               <h2>ポートフォリオサイト</h2>
                React + TypeScriptで実装しました。 <br />
