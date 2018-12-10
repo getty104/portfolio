@@ -1,4 +1,4 @@
-export const rootPath = () => "/portfolio";
-export const selfIntroPath = () => `${rootPath()}/selfintro`;
-export const productsPath = () => `${rootPath()}/products`;
-export const accessPath = () => `${rootPath()}/access`;
+export const rootPath = () => "/";
+export const selfIntroPath = () => "/selfintro";
+export const productsPath = () => "/products";
+export const accessPath = () => "/access";

@@ -13,7 +13,7 @@ import { SelfIntro } from "./SelfIntro";
 export class App extends React.Component {
   public render() {
     return (
-      <BrowserRouter>
+      <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
           <Route exact={true} path={rootPath()} render={() => <Home />} />
           <Route
