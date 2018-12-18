@@ -1,33 +1,38 @@
 import * as React from "react";
-import { Query } from "react-apollo";
 import { Link } from "react-router-dom";
 
+import { getPosts } from "../interactors/getPosts";
 import { rootPath } from "../routes";
+import { GetPostsQuery } from "../types/graphql";
 
-export class BlogIndex extends React.Component {
+interface State {
+  posts: GetPostsQuery["posts"];
+}
+
+export class BlogIndex extends React.Component<{}, State> {
+  constructor(props: {}) {
+    super(props);
+    this.state = { posts: [] };
+  }
+
   public componentDidMount() {
     window.scrollTo(0, 0);
+    getPosts().then(
+      result =>
+        result.success &&
+        result.data &&
+        result.data.posts &&
+        this.setState({ posts: result.data.posts })
+    );
   }
 
   public render() {
     return (
       <div>
-        <Query query={"query { posts {title}}"}>
-          {({ data, loading, error }) => {
-            if (error) {
-              return <div>Error</div>;
-            }
-
-            if (loading) {
-              return <div>Loading</div>;
-            }
-
-            const { posts } = data;
-
-            // tslint:disable-next-line:jsx-key
-            return posts.map(post => <div>{post.title}</div>);
-          }}
-        </Query>
+        {this.state.posts &&
+          this.state.posts.map(
+            (post, index) => post && <div key={index}>{post.title}</div>
+          )}
         <div>
           <Link to={rootPath()}>トップ</Link>
         </div>

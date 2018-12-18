@@ -1,0 +1,8 @@
+query GetPostsQuery {
+  posts {
+    title
+    body
+    insertedAt
+    image
+  }
+}
