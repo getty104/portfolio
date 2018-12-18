@@ -1,10 +1,17 @@
-import { ApolloClient, gql } from "apollo-boost";
+import { InMemoryCache } from "apollo-cache-inmemory";
+import { ApolloClient } from "apollo-client";
+import { HttpLink } from "apollo-link-http";
 
-export const graphQLClient = new ApolloClient({
-  uri: "https://expensive-shocked-elver.gigalixirapp.com/api/graph"
+const httpLink = new HttpLink({
+  uri:
+    process.env.PUBLIC_URL === "production"
+      ? "https://expensive-shocked-elver.gigalixirapp.com/api/graph"
+      : "http://localhost:4000/api/graph"
 });
 
-export const createQuery = (query: string) =>
-  gql`
-    ${query}
-  `;
+const cache = new InMemoryCache();
+
+export const graphQLClient = new ApolloClient({
+  link: httpLink,
+  cache
+});
