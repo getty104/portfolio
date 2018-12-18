@@ -1,4 +1,4 @@
-.ac {
+.ct {
   &-Footer {
     @extend .grid;
     margin-top: 80px;
@@ -11,7 +11,7 @@
       color: #000;
       text-decoration: none;
 
-      @include keyframes(si-Footer_column) {
+      @include keyframes(ct-Footer_column) {
         from {
           opacity: 0;
         }
@@ -20,7 +20,7 @@
         }
       }
 
-      @include animation(si-Footer_column 1s ease 1s);
+      @include animation(ct-Footer_column 1s ease 1s);
     }
   }
 }

@@ -6,7 +6,7 @@ import "../styles/index.scss";
 
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 import { accessPath, productsPath, rootPath, selfIntroPath } from "../routes";
-import { Access } from "./Access";
+import { Contact } from "./Contact";
 import { Product } from "./Product";
 import { SelfIntro } from "./SelfIntro";
 
@@ -26,7 +26,7 @@ export class App extends React.Component {
             path={productsPath()}
             render={() => <Product />}
           />
-          <Route exact={true} path={accessPath()} render={() => <Access />} />
+          <Route exact={true} path={accessPath()} render={() => <Contact />} />
         </Switch>
       </BrowserRouter>
     );
