@@ -29,7 +29,7 @@ export class SelfIntro extends React.Component {
           </div>
         </div>
         <div className="si-Footer">
-          <Link to={accessPath()} className="si-Footer_column">アクセス</Link>
+          <Link to={accessPath()} className="si-Footer_column">コンタクト</Link>
           <Link to={rootPath()} className="si-Footer_column">トップ</Link>
           <Link to={productsPath()} className="si-Footer_column">プロダクト</Link>
         </div>

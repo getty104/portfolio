@@ -46,7 +46,7 @@ export class Product extends React.Component {
         <div className="pd-Footer">
           <Link to={selfIntroPath()} className="pd-Footer_column">自己紹介</Link>
           <Link to={rootPath()} className="pd-Footer_column">トップ</Link>
-          <Link to={accessPath()} className="pd-Footer_column">アクセス</Link>
+          <Link to={accessPath()} className="pd-Footer_column">コンタクト</Link>
         </div>
       </div>
     );

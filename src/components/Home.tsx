@@ -21,7 +21,7 @@ export class Home extends React.Component {
           </Link>
           <Link to={accessPath()} className="hm-Content_access">
             <div className="hm-Content_access-bar" />
-            <div className="hm-Content_access-title">アクセス</div>
+            <div className="hm-Content_access-title">コンタクト</div>
           </Link>
           <a className="hm-Content_blog" href="#">
             <div className="hm-Content_blog-bar" />
