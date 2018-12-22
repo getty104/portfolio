@@ -107,8 +107,8 @@
       }
     }
 
-    &_access {
-      @include setup-animation(hm-Home_access, #FF7A52, #80FF52);
+    &_contact {
+      @include setup-animation(hm-Home_contact, #FF7A52, #80FF52);
       display: flex;
       justify-content: end;
       align-items: center;
@@ -116,24 +116,24 @@
       text-decoration: none;
 
       &:hover {
-        .hm-Content_access-bar {
-          @include animation(hm-Home_access-open-bar .3s ease-out);
+        .hm-Content_contact-bar {
+          @include animation(hm-Home_contact-open-bar .3s ease-out);
         }
 
-        .hm-Content_access-title {
-          @include animation(hm-Home_access-open-text .3s ease-out .3s);
+        .hm-Content_contact-title {
+          @include animation(hm-Home_contact-open-text .3s ease-out .3s);
         }
       }
 
       &-bar {
-        @include animation(hm-Home_access-close-bar .3s ease-out .4s);
+        @include animation(hm-Home_contact-close-bar .3s ease-out .4s);
       }
 
       &-title {
         writing-mode: vertical-rl;
         font-size: 1.5rem;
         color: #000;
-        @include animation(hm-Home_access-close-text .4s ease-in);
+        @include animation(hm-Home_contact-close-text .4s ease-in);
       }
     }
 

@@ -15,7 +15,7 @@ export interface GetPostQuery_post {
 
 export interface GetPostQuery {
   /**
-   * Get a user of the blog
+   * Get a post of the blog
    */
   post: GetPostQuery_post | null;
 }
@@ -33,10 +33,9 @@ export interface GetPostQueryVariables {
 
 export interface GetPostsQuery_posts {
   __typename: "Post";
+  id: string;
   title: string;
-  body: string;
   insertedAt: any;
-  image: string | null;
 }
 
 export interface GetPostsQuery {

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { accessPath, blogsPath, productsPath, selfIntroPath } from "../routes";
+import { blogsPath, contactPath, productsPath, selfIntroPath } from "../routes";
 
 export class Home extends React.Component {
   public componentDidMount() {
@@ -19,9 +19,9 @@ export class Home extends React.Component {
             <div className="hm-Content_product-bar" />
             <div className="hm-Content_product-title">プロダクト</div>
           </Link>
-          <Link to={accessPath()} className="hm-Content_access">
-            <div className="hm-Content_access-bar" />
-            <div className="hm-Content_access-title">コンタクト</div>
+          <Link to={contactPath()} className="hm-Content_contact">
+            <div className="hm-Content_contact-bar" />
+            <div className="hm-Content_contact-title">コンタクト</div>
           </Link>
           <Link to={blogsPath()} className="hm-Content_blog" href="#">
             <div className="hm-Content_blog-bar" />

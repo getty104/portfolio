@@ -2,9 +2,9 @@ import * as React from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
 
 import {
-  accessPath,
   blogPath,
   blogsPath,
+  contactPath,
   productsPath,
   rootPath,
   selfIntroPath
@@ -34,7 +34,7 @@ export class App extends React.Component {
             path={productsPath()}
             render={() => <Product />}
           />
-          <Route exact={true} path={accessPath()} render={() => <Contact />} />
+          <Route exact={true} path={contactPath()} render={() => <Contact />} />
           <Route exact={true} path={blogsPath()} render={() => <BlogIndex />} />
           <Route
             path={blogPath({})}

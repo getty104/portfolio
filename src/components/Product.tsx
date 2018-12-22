@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { accessPath, rootPath, selfIntroPath } from "../routes";
+import { contactPath, rootPath, selfIntroPath } from "../routes";
 import product1 from "../styles/images/product1.png";
 import product2 from "../styles/images/product2.png";
 
@@ -17,21 +17,21 @@ export class Product extends React.Component {
           <div className="pd-Content_title">プロダクト</div>
           <div className="pd-Content_bar" />
           <div className="pd-Content_description">
-            <a href="https://getty104.github.io" target="_blank"><img src={product1} className="pd-Content_description-image"/></a>
             <div className="pd-Content_description-text">
               <h2>ポートフォリオサイト</h2>
                React + TypeScriptで実装しました。 <br />
                cssはフルスクラッチ。
             </div>
+            <a href="https://getty104.github.io" target="_blank"><img src={product1} className="pd-Content_description-image"/></a>
           </div>
           <div className="pd-Content_description">
-            <a href="https://www.life-squad.jp" target="_blank"><img src={product2} className="pd-Content_description-image"/></a>
             <div className="pd-Content_description-text">
               <h2>Life Squad</h2>
                Rails + React + TypeScriptで実装。 <br />
                知人とともに作成しました。 <br />
                主にサーバーサイド、インフラ、ビジネスロジック、フロントエンドの実装を担当しました。
             </div>
+            <a href="https://www.life-squad.jp" target="_blank"><img src={product2} className="pd-Content_description-image"/></a>
           </div>
           <div className="pd-Content_description">
             <div className="pd-Content_description-other">
@@ -46,7 +46,7 @@ export class Product extends React.Component {
         <div className="pd-Footer">
           <Link to={selfIntroPath()} className="pd-Footer_column">自己紹介</Link>
           <Link to={rootPath()} className="pd-Footer_column">トップ</Link>
-          <Link to={accessPath()} className="pd-Footer_column">コンタクト</Link>
+          <Link to={contactPath()} className="pd-Footer_column">コンタクト</Link>
         </div>
       </div>
     );

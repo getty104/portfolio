@@ -1,8 +1,9 @@
+import * as Moment from "moment";
 import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { getPosts } from "../interactors/getPosts";
-import { rootPath } from "../routes";
+import { blogPath, contactPath, rootPath, selfIntroPath } from "../routes";
 import { GetPostsQuery } from "../types/graphql";
 
 interface State {
@@ -29,12 +30,39 @@ export class BlogIndex extends React.Component<{}, State> {
   public render() {
     return (
       <div>
-        {this.state.posts &&
-          this.state.posts.map(
-            (post, index) => post && <div key={index}>{post.title}</div>
-          )}
-        <div>
-          <Link to={rootPath()}>トップ</Link>
+        <div className="bgi-Content">
+          <div className="bgi-Content_title">ブログ</div>
+          <div className="bgi-Content_bar" />
+          <div className="bgi-Content_items">
+            {this.state.posts &&
+              this.state.posts.map(
+                (post, index) =>
+                  post && (
+                    <div className="bgi-Content_item" key={index}>
+                      <Link
+                        to={blogPath({ id: post.id })}
+                        className="bgi-Content_item-title"
+                      >
+                        {post.title}
+                      </Link>
+                      <div className="bgi-Content_item-date">
+                        {Moment(post.insertedAt).format("YYYY年MM月DD日")}
+                      </div>
+                    </div>
+                  )
+              )}
+          </div>
+        </div>
+        <div className="bgi-Footer">
+          <Link to={contactPath()} className="bgi-Footer_column">
+            コンタクト
+          </Link>
+          <Link to={rootPath()} className="bgi-Footer_column">
+            トップ
+          </Link>
+          <Link to={selfIntroPath()} className="bgi-Footer_column">
+            自己紹介
+          </Link>
         </div>
       </div>
     );
