@@ -1,8 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
+import { getParsedMarkdownText } from "../interactors/getParsedMarkdownText";
 import { getPost } from "../interactors/getPost";
 import { blogsPath } from "../routes";
+import { formatDate } from "../tools/formatDate";
 import { GetPostQuery } from "../types/graphql";
 
 interface State {
@@ -37,10 +39,39 @@ export class BlogShow extends React.Component<Props, State> {
   public render() {
     return (
       <div>
-        {this.state.post && this.state.post.title}
-        <div>
-          <Link to={blogsPath()}>一覧へ</Link>
-        </div>
+        {this.state.post && (
+          <div>
+            <div className="bgs-Content">
+              <div className="bgs-Content_header">
+                <div className="bgs-Content_header-title">
+                  <div className="bgs-Content_title-text">
+                    {this.state.post.title}
+                  </div>
+                  <div className="bgs-Content_title-date">
+                    {formatDate(this.state.post.insertedAt)}
+                  </div>
+                </div>
+                {this.state.post.image && (
+                  <img
+                    className="bgs-Content_header-image"
+                    src={this.state.post.image}
+                  />
+                )}
+              </div>
+              <div
+                className="bgs-Content_description"
+                dangerouslySetInnerHTML={{
+                  __html: getParsedMarkdownText(this.state.post.body)
+                }}
+              />
+            </div>
+            <div className="bgs-Footer">
+              <Link to={blogsPath()} className="bgs-Footer_column">
+                一覧へ
+              </Link>
+            </div>
+          </div>
+        )}
       </div>
     );
   }

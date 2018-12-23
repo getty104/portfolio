@@ -1,9 +1,9 @@
-import * as Moment from "moment";
 import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { getPosts } from "../interactors/getPosts";
 import { blogPath, contactPath, rootPath, selfIntroPath } from "../routes";
+import { formatDate } from "../tools/formatDate";
 import { GetPostsQuery } from "../types/graphql";
 
 interface State {
@@ -46,7 +46,7 @@ export class BlogIndex extends React.Component<{}, State> {
                         {post.title}
                       </Link>
                       <div className="bgi-Content_item-date">
-                        {Moment(post.insertedAt).format("YYYY年MM月DD日")}
+                        {formatDate(post.insertedAt)}
                       </div>
                     </div>
                   )
