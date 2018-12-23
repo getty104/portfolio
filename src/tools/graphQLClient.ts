@@ -4,9 +4,9 @@ import { HttpLink } from "apollo-link-http";
 
 const httpLink = new HttpLink({
   uri:
-    process.env.PUBLIC_URL === "production"
-      ? "https://expensive-shocked-elver.gigalixirapp.com/api/graph"
-      : "http://localhost:4000/api/graph"
+    process.env.PUBLIC_URL === "development"
+      ? "http://localhost:4000/api/graph"
+      : "https://expensive-shocked-elver.gigalixirapp.com/api/graph"
 });
 
 const cache = new InMemoryCache();
