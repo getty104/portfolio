@@ -4,7 +4,7 @@ import { HttpLink } from "apollo-link-http";
 
 const httpLink = new HttpLink({
   uri:
-    process.env.PUBLIC_URL === "development"
+    process.env.NODE_ENV === "development"
       ? "http://localhost:4000/api/graph"
       : "https://expensive-shocked-elver.gigalixirapp.com/api/graph"
 });
