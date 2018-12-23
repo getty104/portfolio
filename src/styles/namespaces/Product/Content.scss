@@ -60,8 +60,10 @@
 
 
         @include viewport-s {
-          display: block;
-          margin: auto;
+          img {
+            display: block;
+            margin: auto;
+          }
         }
 
         @include keyframes(pd-Content_description-image) {
