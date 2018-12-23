@@ -1,12 +1,20 @@
 import * as React from "react";
+import { BrowserRouter, Route, Switch } from "react-router-dom";
 
-import { Home } from "./Home";
-
+import {
+  blogPath,
+  blogsPath,
+  contactPath,
+  productsPath,
+  rootPath,
+  selfIntroPath
+} from "../routes";
 import "../styles/index.scss";
 
-import { BrowserRouter, Route, Switch } from "react-router-dom";
-import { accessPath, productsPath, rootPath, selfIntroPath } from "../routes";
+import { BlogIndex } from "./BlogIndex";
+import { BlogShow } from "./BlogShow";
 import { Contact } from "./Contact";
+import { Home } from "./Home";
 import { Product } from "./Product";
 import { SelfIntro } from "./SelfIntro";
 
@@ -26,7 +34,12 @@ export class App extends React.Component {
             path={productsPath()}
             render={() => <Product />}
           />
-          <Route exact={true} path={accessPath()} render={() => <Contact />} />
+          <Route exact={true} path={contactPath()} render={() => <Contact />} />
+          <Route exact={true} path={blogsPath()} render={() => <BlogIndex />} />
+          <Route
+            path={blogPath({})}
+            render={props => <BlogShow {...props} />}
+          />
         </Switch>
       </BrowserRouter>
     );

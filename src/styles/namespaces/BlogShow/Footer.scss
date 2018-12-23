@@ -1,0 +1,15 @@
+.bgs {
+  &-Footer {
+    @extend .grid;
+    margin-top: 80px;
+    margin-bottom: 40px;
+
+    &_column {
+      width: 100px;
+      margin: auto;
+      text-align: center;
+      color: #000;
+      text-decoration: none;
+    }
+  }
+}

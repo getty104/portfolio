@@ -1,0 +1,50 @@
+.bgs {
+  &-Content {
+    @extend .grid;
+    display: block;
+    margin-top: 120px;
+    max-width: 80%;
+
+    &_header {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 24px;
+
+      &-title {
+        width: 100%;
+      }
+
+      &-image {
+        width: 100%;
+        
+        @include viewport-s {
+          display: none;
+        }
+      }
+    }
+
+    &_title {
+      display: block;
+      &-text {
+        font-size: 3.2rem;
+        word-break: break-all; 
+        text-align: center;
+      }
+      
+      &-date {
+        font-size: 1.6rem;
+        text-align: center;
+      }
+    }
+
+    &_description {
+      margin: auto;
+      max-width: 640px;
+
+      h1, h2, h3, h4, h5, h6 {
+        border-bottom: solid medium #52D6FF;
+      }
+    }
+  }
+}
