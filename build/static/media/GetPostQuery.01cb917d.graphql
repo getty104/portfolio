@@ -1,9 +1,0 @@
-query GetPostQuery($id: ID!) {
-  post(id: $id) {
-    title
-    body
-    insertedAt
-    image
-  }
-}
-

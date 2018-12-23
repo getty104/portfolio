@@ -1,7 +1,0 @@
-query GetPostsQuery {
-  posts {
-    id
-    title
-    insertedAt
-  }
-}

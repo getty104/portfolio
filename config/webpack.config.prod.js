@@ -101,6 +101,8 @@ module.exports = {
       '.json',
       '.web.jsx',
       '.jsx',
+      '.gql',
+      '.graphql'
     ],
     alias: {
 
@@ -137,6 +139,10 @@ module.exports = {
         oneOf: [
           // "url" loader works just like "file" loader but it also embeds
           // assets smaller than specified size as data URLs to avoid requests.
+          {
+            test: /\.(graphql|gql)$/,
+            loader: require.resolve("graphql-tag/loader")
+          },
           {
             test: [/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/],
             loader: require.resolve('url-loader'),

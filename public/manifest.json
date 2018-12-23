@@ -39,7 +39,7 @@
    "density": "4.0"
   }
  ],
-  "start_url": "/blog",
+  "start_url": "/blogs",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
