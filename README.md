@@ -1,3 +1,3 @@
 # Portfolio
 This is my portfolio project.
-Please visit https://getty104.github.io
+Please visit https://www.getty104.tk

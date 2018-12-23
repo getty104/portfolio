@@ -19,10 +19,14 @@ export class Product extends React.Component {
           <div className="pd-Content_description">
             <div className="pd-Content_description-text">
               <h2>ポートフォリオサイト</h2>
-               React + TypeScriptで実装しました。 <br />
-               cssはフルスクラッチ。
+               React + TypeScript + Phoenix(Elixir)で実装しました。 <br />
+               フロントエンドはSPAとして実装しています。 <br />
+               API実装にはGraphQLを用い、クライアントにはApolloClientを使用しました。 <br />
+               CSSはフルスクラッチ。 <br />
+               <a href="https://github.com/getty104/getty104.github.io" target="_blank">フロントエンドのソースコード</a> <br />
+               <a href="https://github.com/getty104/blog_app_ex" target="_blank">バックエンドのソースコード</a>
             </div>
-            <a href="https://getty104.github.io" target="_blank"><img src={product1} className="pd-Content_description-image"/></a>
+            <a href="https://getty104.github.io" target="_blank" className="pd-Content_description-image"><img src={product1} /></a>
           </div>
           <div className="pd-Content_description">
             <div className="pd-Content_description-text">
@@ -31,7 +35,7 @@ export class Product extends React.Component {
                知人とともに作成しました。 <br />
                主にサーバーサイド、インフラ、ビジネスロジック、フロントエンドの実装を担当しました。
             </div>
-            <a href="https://www.life-squad.jp" target="_blank"><img src={product2} className="pd-Content_description-image"/></a>
+            <a href="https://www.life-squad.jp" target="_blank" className="pd-Content_description-image"><img src={product2}/></a>
           </div>
           <div className="pd-Content_description">
             <div className="pd-Content_description-other">
