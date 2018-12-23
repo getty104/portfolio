@@ -20,7 +20,7 @@ export class Product extends React.Component {
             <div className="pd-Content_description-text">
               <h2>ポートフォリオサイト</h2>
                React + TypeScript + Phoenix(Elixir)で実装しました。 <br />
-               フロントエンドはSPAとして実装しています。 <br />
+               フロントエンドはSPAとして実装しており、PWAに対応しています <br />
                API実装にはGraphQLを用い、クライアントにはApolloClientを使用しました。 <br />
                CSSはフルスクラッチ。 <br />
                <a href="https://github.com/getty104/getty104.github.io" target="_blank">フロントエンドのソースコード</a> <br />
@@ -42,7 +42,7 @@ export class Product extends React.Component {
               <h2>スキルセット</h2>
                 言語：Ruby, TypeScript, SQL, Elixir, Java, Solidity, python3, C++ <br />
                 フレームワーク： Rails, React, hyperapp, Phoenix <br />
-                ツール： BigQuery, Docker, Vagrant, GraphQL <br />
+                ツール： BigQuery, Docker, Vagrant, GraphQL, ServiceWorker <br />
                 最近は関数型言語とドメイン駆動設計に興味があります。
             </div>
           </div>
