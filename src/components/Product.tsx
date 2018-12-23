@@ -26,7 +26,7 @@ export class Product extends React.Component {
                <a href="https://github.com/getty104/getty104.github.io" target="_blank">フロントエンドのソースコード</a> <br />
                <a href="https://github.com/getty104/blog_app_ex" target="_blank">バックエンドのソースコード</a>
             </div>
-            <a href="https://getty104.github.io" target="_blank" className="pd-Content_description-image"><img src={product1} /></a>
+            <a href="https://www.getty104.tk" target="_blank" className="pd-Content_description-image"><img src={product1} /></a>
           </div>
           <div className="pd-Content_description">
             <div className="pd-Content_description-text">
