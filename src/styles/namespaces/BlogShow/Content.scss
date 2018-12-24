@@ -5,6 +5,10 @@
     margin-top: 120px;
     max-width: 80%;
 
+    @include viewport-s {
+      max-width: 90%;
+    }
+
     &_header {
       display: flex;
       justify-content: center;
@@ -35,6 +39,10 @@
         word-break: break-all; 
         text-align: center;
         padding: 0 8px;
+
+        @include viewport-s {
+          font-size: 2.4rem;
+        }
       }
       
       &-date {
@@ -52,6 +60,54 @@
 
       h1, h2, h3, h4, h5, h6 {
         border-bottom: solid medium #52D6FF;
+      }
+
+      h1 {
+        font-size: 2.4rem;
+
+        @include viewport-s {
+          font-size: 2.0rem;
+        }
+      }
+
+      h2 {
+        font-size: 2.2rem;
+
+        @include viewport-s {
+          font-size: 1.8rem;
+        }
+      }
+
+      h3 {
+        font-size: 2.0rem;
+
+        @include viewport-s {
+          font-size: 1.6rem;
+        }
+      }
+
+      h4 {
+        font-size: 1.8rem;
+        
+        @include viewport-s {
+          font-size: 1.4rem;
+        }
+      }
+
+      h5 {
+        font-size: 1.6rem;
+
+        @include viewport-s {
+          font-size: 1.2rem;
+        }
+      }
+
+      h6 {
+        font-size: 1.4rem;
+
+        @include viewport-s {
+          font-size: 1.0rem;
+        }
       }
     }
   }
