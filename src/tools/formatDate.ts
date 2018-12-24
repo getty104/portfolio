@@ -1,3 +1,4 @@
 import * as Moment from "moment";
 
-export const formatDate = (date: any) => Moment(date).format("YYYY年MM月DD日");
+export const formatDate = (date: any) =>
+  Moment(date).format("YYYY年MM月DD日 HH:mm");
