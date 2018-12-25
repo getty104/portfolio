@@ -25,26 +25,6 @@
           @include bar-active($head-color, $tail-color);
         }
       }
-
-      @include keyframes(#{$keyframes-name}-close-text) {
-        from {
-          opacity: 1;
-        }
-
-        to {
-          opacity: 0;
-        }
-      }
-
-      @include keyframes(#{$keyframes-name}-open-text) {
-        from {
-          opacity: 0;
-        }
-
-        to {
-          opacity: 1;
-        }
-      }
     }
 
     &_profile {
@@ -59,21 +39,16 @@
         .hm-Content_profile-bar {
           @include animation(hm-Home_profile-open-bar .3s ease-out);
         }
-
-        .hm-Content_profile-title {
-          @include animation(hm-Home_profile-open-text .3s ease-out .3s);
-        }
       }
 
       &-bar {
-        @include animation(hm-Home_profile-close-bar .3s ease-out .4s);
+        @include animation(hm-Home_profile-close-bar .3s ease-out .2s);
       }
 
       &-title {
         writing-mode: vertical-rl;
         font-size: 1.5rem;
         color: #000;
-        @include animation(hm-Home_profile-close-text .4s ease-in);
       }
     }
 
@@ -89,21 +64,16 @@
         .hm-Content_product-bar {
           @include animation(hm-Home_product-open-bar .3s ease-out);
         }
-
-        .hm-Content_product-title {
-          @include animation(hm-Home_product-open-text .3s ease-out .3s);
-        }
       }
 
       &-bar {
-        @include animation(hm-Home_product-close-bar .3s ease-out .4s);
+        @include animation(hm-Home_product-close-bar .3s ease-out .2s);
       }
 
       &-title {
         writing-mode: vertical-rl;
         font-size: 1.5rem;
         color: #000;
-        @include animation(hm-Home_product-close-text .4s ease-in);
       }
     }
 
@@ -119,21 +89,16 @@
         .hm-Content_contact-bar {
           @include animation(hm-Home_contact-open-bar .3s ease-out);
         }
-
-        .hm-Content_contact-title {
-          @include animation(hm-Home_contact-open-text .3s ease-out .3s);
-        }
       }
 
       &-bar {
-        @include animation(hm-Home_contact-close-bar .3s ease-out .4s);
+        @include animation(hm-Home_contact-close-bar .3s ease-out .2s);
       }
 
       &-title {
         writing-mode: vertical-rl;
         font-size: 1.5rem;
         color: #000;
-        @include animation(hm-Home_contact-close-text .4s ease-in);
       }
     }
 
@@ -149,21 +114,16 @@
         .hm-Content_blog-bar {
           @include animation(hm-Home_blog-open-bar .3s ease-out);
         }
-
-        .hm-Content_blog-title {
-          @include animation(hm-Home_blog-open-text .3s ease-out .3s);
-        }
       }
 
       &-bar {
-        @include animation(hm-Home_blog-close-bar .3s ease-out .4s);
+        @include animation(hm-Home_blog-close-bar .3s ease-out .2s);
       }
 
       &-title {
         writing-mode: vertical-rl;
         font-size: 1.5rem;
         color: #000;
-        @include animation(hm-Home_blog-close-text .4s ease-in);
       }
     }
   }
