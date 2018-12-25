@@ -35,22 +35,25 @@ export class BlogIndex extends React.Component<{}, State> {
           <div className="bgi-Content_bar" />
           <div className="bgi-Content_items">
             {this.state.posts &&
-              this.state.posts.map(
-                (post, index) =>
-                  post && (
-                    <div className="bgi-Content_item" key={index}>
-                      <Link
-                        to={blogPath({ id: post.id })}
-                        className="bgi-Content_item-title"
-                      >
-                        {post.title}
-                      </Link>
-                      <div className="bgi-Content_item-date">
-                        {formatDate(post.insertedAt)}
+              this.state.posts
+                .filter(post => post)
+                .sort((a, b) => (a!.insertedAt < b!.insertedAt ? 1 : -1))
+                .map(
+                  (post, index) =>
+                    post && (
+                      <div className="bgi-Content_item" key={index}>
+                        <Link
+                          to={blogPath({ id: post.id })}
+                          className="bgi-Content_item-title"
+                        >
+                          {post.title}
+                        </Link>
+                        <div className="bgi-Content_item-date">
+                          {formatDate(post.insertedAt)}
+                        </div>
                       </div>
-                    </div>
-                  )
-              )}
+                    )
+                )}
           </div>
         </div>
         <div className="bgi-Footer">
