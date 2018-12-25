@@ -37,7 +37,7 @@ export class BlogIndex extends React.Component<{}, State> {
             {this.state.posts &&
               this.state.posts
                 .filter(post => post)
-                .sort((a, b) => (a!.insertedAt < b!.insertedAt ? 1 : -1))
+                .sort((a, b) => (a!.id < b!.id ? 1 : -1))
                 .map(
                   (post, index) =>
                     post && (
