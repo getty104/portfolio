@@ -42,7 +42,7 @@
       }
 
       &-bar {
-        @include animation(hm-Home_profile-close-bar .3s ease-out .2s);
+        @include animation(hm-Home_profile-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -67,7 +67,7 @@
       }
 
       &-bar {
-        @include animation(hm-Home_product-close-bar .3s ease-out .2s);
+        @include animation(hm-Home_product-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -92,7 +92,7 @@
       }
 
       &-bar {
-        @include animation(hm-Home_contact-close-bar .3s ease-out .2s);
+        @include animation(hm-Home_contact-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -117,7 +117,7 @@
       }
 
       &-bar {
-        @include animation(hm-Home_blog-close-bar .3s ease-out .2s);
+        @include animation(hm-Home_blog-close-bar .3s ease-out .3s);
       }
 
       &-title {

@@ -15,6 +15,10 @@
       align-items: center;
       margin-bottom: 80px;
 
+      @include viewport-s {
+        margin-bottom: 40px;
+      }
+
       &-title {
         width: 50%;
 
@@ -54,16 +58,16 @@
     &_description {
       margin: auto;
       max-width: 640px;
-      font-size: 1.0rem;
-      line-height : 1.5;
-      letter-spacing : 0.1em;
+      font-size: 1.2rem;
+      line-height : 2;
 
       h1, h2, h3, h4, h5, h6 {
-        border-bottom: solid medium #52D6FF;
+        margin-bottom: 4px;
       }
 
       h1 {
         font-size: 2.4rem;
+        border-bottom: solid 4px #52D6FF;
 
         @include viewport-s {
           font-size: 2.0rem;
@@ -71,42 +75,20 @@
       }
 
       h2 {
-        font-size: 2.2rem;
-
-        @include viewport-s {
-          font-size: 1.8rem;
-        }
-      }
-
-      h3 {
         font-size: 2.0rem;
+        border-bottom: solid 3.5px #52D6FF;
 
         @include viewport-s {
           font-size: 1.6rem;
         }
       }
 
-      h4 {
-        font-size: 1.8rem;
-        
-        @include viewport-s {
-          font-size: 1.4rem;
-        }
-      }
-
-      h5 {
+      h3, h4, h5, h6 {
         font-size: 1.6rem;
+        border-bottom: solid 3px #52D6FF;
 
         @include viewport-s {
           font-size: 1.2rem;
-        }
-      }
-
-      h6 {
-        font-size: 1.4rem;
-
-        @include viewport-s {
-          font-size: 1.0rem;
         }
       }
     }
