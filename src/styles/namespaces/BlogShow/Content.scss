@@ -2,12 +2,8 @@
   &-Content {
     @extend .grid;
     display: block;
-    margin-top: 120px;
-    max-width: 80%;
-
-    @include viewport-s {
-      max-width: 90%;
-    }
+    margin-top: 80px;
+    max-width: 90%;
 
     &_header {
       display: flex;
@@ -17,6 +13,7 @@
 
       @include viewport-s {
         margin-bottom: 40px;
+        display: block;
       }
 
       &-title {
@@ -24,6 +21,7 @@
 
         @include viewport-s {
           width: 100%;
+          margin-bottom: 40px;
         }
       }
 
@@ -31,7 +29,7 @@
         width: 50%;
         
         @include viewport-s {
-          display: none;
+          width: 100%;
         }
       }
     }
@@ -57,8 +55,8 @@
 
     &_description {
       margin: auto;
-      max-width: 640px;
-      font-size: 1.2rem;
+      max-width: 720px;
+      font-size: 1.1rem;
       line-height : 2;
 
       h1, h2, h3, h4, h5, h6 {
