@@ -6,7 +6,7 @@ Marked.setOptions({
   tables: true,
   breaks: true,
   pedantic: true,
-  sanitize: true,
+  sanitize: false,
   smartLists: true,
   smartypants: true
 });

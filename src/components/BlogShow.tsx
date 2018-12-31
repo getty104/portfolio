@@ -5,6 +5,7 @@ import { getParsedMarkdownText } from "../interactors/getParsedMarkdownText";
 import { getPost } from "../interactors/getPost";
 import { blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
+import { executeScriptTagsById } from "../tools/scriptTagExecuter";
 import { GetPostQuery } from "../types/graphql";
 
 interface State {
@@ -27,18 +28,18 @@ export class BlogShow extends React.Component<Props, State> {
 
   public componentDidMount() {
     window.scrollTo(0, 0);
-    getPost(this.props.match.params.id).then(
-      result =>
-        result.success &&
+    getPost(this.props.match.params.id).then(result => {
+      result.success &&
         result.data &&
         result.data.post &&
-        this.setState({ post: result.data.post })
-    );
+        this.setState({ post: result.data.post });
+      executeScriptTagsById("blog");
+    });
   }
 
   public render() {
     return (
-      <div>
+      <div id="blog">
         {this.state.post && (
           <div>
             <div className="bgs-Content">
