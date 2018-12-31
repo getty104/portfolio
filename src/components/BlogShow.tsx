@@ -33,7 +33,7 @@ export class BlogShow extends React.Component<Props, State> {
         result.data &&
         result.data.post &&
         this.setState({ post: result.data.post });
-      executeScriptTagsById("blog");
+      setTimeout(() => executeScriptTagsById("blog"), 100);
     });
   }
 
