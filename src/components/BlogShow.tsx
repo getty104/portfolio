@@ -60,7 +60,7 @@ export class BlogShow extends React.Component<Props, State> {
                 )}
               </div>
               <div
-                className="bgs-Content_description"
+                className="bgs-Content_description bgs-Markdown"
                 dangerouslySetInnerHTML={{
                   __html: getParsedMarkdownText(this.state.post.body)
                 }}
