@@ -31,18 +31,49 @@ export interface GetPostQueryVariables {
 // GraphQL query operation: GetPostsQuery
 // ====================================================
 
-export interface GetPostsQuery_posts {
+export interface GetPostsQuery_posts_edges_node {
   __typename: "Post";
   id: string;
   title: string;
   insertedAt: any;
 }
 
+export interface GetPostsQuery_posts_edges {
+  __typename: "PostEdge";
+  /**
+   * The item at the end of the edge
+   */
+  node: GetPostsQuery_posts_edges_node | null;
+}
+
+export interface GetPostsQuery_posts_pageInfo {
+  __typename: "PageInfo";
+  /**
+   * When paginating forwards, are there more items?
+   */
+  hasNextPage: boolean;
+  /**
+   * When paginating backwards, are there more items?
+   */
+  hasPreviousPage: boolean;
+}
+
+export interface GetPostsQuery_posts {
+  __typename: "PostConnection";
+  edges: (GetPostsQuery_posts_edges | null)[] | null;
+  pageInfo: GetPostsQuery_posts_pageInfo;
+}
+
 export interface GetPostsQuery {
   /**
    * Get all posts
    */
-  posts: (GetPostsQuery_posts | null)[] | null;
+  posts: GetPostsQuery_posts | null;
+}
+
+export interface GetPostsQueryVariables {
+  first: number;
+  offset?: number | null;
 }
 
 /* tslint:disable */

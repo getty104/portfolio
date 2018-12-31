@@ -2,29 +2,28 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { getPosts } from "../interactors/getPosts";
-import { blogPath, contactPath, rootPath, selfIntroPath } from "../routes";
+import { blogPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { GetPostsQuery } from "../types/graphql";
 
 interface State {
   posts: GetPostsQuery["posts"];
+  currentPage: number;
 }
 
 export class BlogIndex extends React.Component<{}, State> {
   constructor(props: {}) {
     super(props);
-    this.state = { posts: [] };
+    this.state = { posts: null, currentPage: 0 };
+
+    this.goPreviousPage = this.goPreviousPage.bind(this);
+    this.goNextPage = this.goNextPage.bind(this);
+    this.setPosts = this.setPosts.bind(this);
   }
 
   public componentDidMount() {
     window.scrollTo(0, 0);
-    getPosts().then(
-      result =>
-        result.success &&
-        result.data &&
-        result.data.posts &&
-        this.setState({ posts: result.data.posts })
-    );
+    this.setPosts(0);
   }
 
   public render() {
@@ -35,39 +34,61 @@ export class BlogIndex extends React.Component<{}, State> {
           <div className="bgi-Content_bar" />
           <div className="bgi-Content_items">
             {this.state.posts &&
-              this.state.posts
-                .filter(post => post)
-                .sort((a, b) => (a!.id < b!.id ? 1 : -1))
-                .map(
-                  (post, index) =>
-                    post && (
-                      <div className="bgi-Content_item" key={index}>
-                        <Link
-                          to={blogPath({ id: post.id })}
-                          className="bgi-Content_item-title"
-                        >
-                          {post.title}
-                        </Link>
-                        <div className="bgi-Content_item-date">
-                          {formatDate(post.insertedAt)}
-                        </div>
+              this.state.posts.edges &&
+              this.state.posts.edges.map(
+                (post, index) =>
+                  post &&
+                  post.node && (
+                    <div className="bgi-Content_item" key={index}>
+                      <Link
+                        to={blogPath({ id: post.node.id })}
+                        className="bgi-Content_item-title"
+                      >
+                        {post.node.title}
+                      </Link>
+                      <div className="bgi-Content_item-date">
+                        {formatDate(post.node.insertedAt)}
                       </div>
-                    )
-                )}
+                    </div>
+                  )
+              )}
           </div>
         </div>
         <div className="bgi-Footer">
-          <Link to={contactPath()} className="bgi-Footer_column">
-            コンタクト
-          </Link>
-          <Link to={rootPath()} className="bgi-Footer_column">
-            トップ
-          </Link>
-          <Link to={selfIntroPath()} className="bgi-Footer_column">
-            自己紹介
-          </Link>
+          {this.state.posts &&
+            this.state.posts.pageInfo.hasPreviousPage && (
+              <a className="bgi-Footer_column" onClick={this.goPreviousPage}>
+                前のページ
+              </a>
+            )}
+          {this.state.posts &&
+            this.state.posts.pageInfo.hasNextPage && (
+              <a className="bgi-Footer_column" onClick={this.goNextPage}>
+                次のページ
+              </a>
+            )}
         </div>
       </div>
+    );
+  }
+
+  private goPreviousPage() {
+    window.scrollTo(0, 0);
+    this.setPosts(this.state.currentPage - 1);
+  }
+
+  private goNextPage() {
+    window.scrollTo(0, 0);
+    this.setPosts(this.state.currentPage + 1);
+  }
+
+  private setPosts(page: number) {
+    getPosts(page).then(
+      result =>
+        result.success &&
+        result.data &&
+        result.data.posts &&
+        this.setState({ posts: result.data.posts, currentPage: page })
     );
   }
 }

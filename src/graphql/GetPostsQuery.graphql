@@ -1,7 +1,15 @@
-query GetPostsQuery {
-  posts {
-    id
-    title
-    insertedAt
+query GetPostsQuery($first: Int!, $offset: Int) {
+  posts(first: $first, offset: $offset) {
+    edges {
+      node {
+        id
+        title
+        insertedAt
+      }
+    }
+    pageInfo {
+      hasNextPage
+      hasPreviousPage
+    }
   }
 }
