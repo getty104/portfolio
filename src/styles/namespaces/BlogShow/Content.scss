@@ -56,38 +56,6 @@
     &_description {
       margin: auto;
       max-width: 720px;
-      font-size: 1.1rem;
-      line-height : 2;
-
-      h1, h2, h3, h4, h5, h6 {
-        margin-bottom: 4px;
-      }
-
-      h1 {
-        font-size: 2.4rem;
-        border-bottom: solid 4px #52D6FF;
-
-        @include viewport-s {
-          font-size: 2.0rem;
-        }
-      }
-
-      h2 {
-        font-size: 2.0rem;
-        border-bottom: solid 3.5px #52D6FF;
-
-        @include viewport-s {
-          font-size: 1.6rem;
-        }
-      }
-
-      h3, h4, h5, h6 {
-        font-size: 1.6rem;
-
-        @include viewport-s {
-          font-size: 1.2rem;
-        }
-      }
     }
   }
 }
