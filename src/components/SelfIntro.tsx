@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { blogsPath, productsPath, rootPath } from "../routes";
+import { contactPath, productsPath, rootPath } from "../routes";
 
 /* tslint:disable */
 export class SelfIntro extends React.Component {
@@ -29,7 +29,7 @@ export class SelfIntro extends React.Component {
           </div>
         </div>
         <div className="si-Footer">
-          <Link to={blogsPath()} className="si-Footer_column">ブログ</Link>
+          <Link to={contactPath()} className="si-Footer_column">コンタクト</Link>
           <Link to={rootPath()} className="si-Footer_column">トップ</Link>
           <Link to={productsPath()} className="si-Footer_column">プロダクト</Link>
         </div>

@@ -1,6 +1,6 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { blogsPath, productsPath, rootPath } from "../routes";
+import { productsPath, rootPath, selfIntroPath } from "../routes";
 import facebook from "../styles/images/facebook.png";
 import github from "../styles/images/github.png";
 import twitter from "../styles/images/twitter.png";
@@ -26,7 +26,7 @@ export class Contact extends React.Component {
         <div className="ct-Footer">
           <Link to={productsPath()} className="ct-Footer_column">プロダクト</Link>
           <Link to={rootPath()} className="ct-Footer_column">トップ</Link>
-          <Link to={blogsPath()} className="ct-Footer_column">ブログ</Link>
+          <Link to={selfIntroPath()} className="ct-Footer_column">自己紹介</Link>
         </div>
       </div>
     );
