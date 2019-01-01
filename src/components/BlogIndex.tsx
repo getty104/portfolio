@@ -55,18 +55,16 @@ export class BlogIndex extends React.Component<{}, State> {
           </div>
         </div>
         <div className="bgi-Footer">
-          {this.state.posts &&
-            this.state.posts.pageInfo.hasPreviousPage && (
-              <a className="bgi-Footer_column" onClick={this.goPreviousPage}>
-                前のページ
-              </a>
-            )}
-          {this.state.posts &&
-            this.state.posts.pageInfo.hasNextPage && (
-              <a className="bgi-Footer_column" onClick={this.goNextPage}>
-                次のページ
-              </a>
-            )}
+          {this.state.posts && this.state.posts.pageInfo.hasPreviousPage && (
+            <a className="bgi-Footer_column" onClick={this.goPreviousPage}>
+              前のページ
+            </a>
+          )}
+          {this.state.posts && this.state.posts.pageInfo.hasNextPage && (
+            <a className="bgi-Footer_column" onClick={this.goNextPage}>
+              次のページ
+            </a>
+          )}
         </div>
       </div>
     );

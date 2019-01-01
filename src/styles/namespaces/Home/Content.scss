@@ -35,14 +35,14 @@
       margin: auto;
       text-decoration: none;
 
+      &-bar {
+        @include animation(hm-Home_profile-close-bar .3s ease-out .3s);
+      }
+
       &:hover {
         .hm-Content_profile-bar {
           @include animation(hm-Home_profile-open-bar .3s ease-out);
         }
-      }
-
-      &-bar {
-        @include animation(hm-Home_profile-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -60,14 +60,14 @@
       margin: auto;
       text-decoration: none;
 
+      &-bar {
+        @include animation(hm-Home_product-close-bar .3s ease-out .3s);
+      }
+
       &:hover {
         .hm-Content_product-bar {
           @include animation(hm-Home_product-open-bar .3s ease-out);
         }
-      }
-
-      &-bar {
-        @include animation(hm-Home_product-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -85,14 +85,14 @@
       margin: auto;
       text-decoration: none;
 
+      &-bar {
+        @include animation(hm-Home_contact-close-bar .3s ease-out .3s);
+      }
+
       &:hover {
         .hm-Content_contact-bar {
           @include animation(hm-Home_contact-open-bar .3s ease-out);
         }
-      }
-
-      &-bar {
-        @include animation(hm-Home_contact-close-bar .3s ease-out .3s);
       }
 
       &-title {
@@ -110,14 +110,14 @@
       margin: auto;
       text-decoration: none;
 
+      &-bar {
+        @include animation(hm-Home_blog-close-bar .3s ease-out .3s);
+      }
+
       &:hover {
         .hm-Content_blog-bar {
           @include animation(hm-Home_blog-open-bar .3s ease-out);
         }
-      }
-
-      &-bar {
-        @include animation(hm-Home_blog-close-bar .3s ease-out .3s);
       }
 
       &-title {
