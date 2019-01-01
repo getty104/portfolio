@@ -1,0 +1,17 @@
+
+.nf {
+  &-Content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+
+    &_text {
+      font-size: 5rem;
+
+      @include viewport-s {
+        font-size: 2.5rem;
+      }
+    }
+  }
+}

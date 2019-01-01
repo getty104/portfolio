@@ -15,6 +15,7 @@ import { BlogIndex } from "./BlogIndex";
 import { BlogShow } from "./BlogShow";
 import { Contact } from "./Contact";
 import { Home } from "./Home";
+import { NotFound } from "./NotFound";
 import { Product } from "./Product";
 import { SelfIntro } from "./SelfIntro";
 
@@ -40,6 +41,7 @@ export class App extends React.Component {
             path={blogPath({})}
             render={props => <BlogShow {...props} />}
           />
+          <Route render={() => <NotFound />} />
         </Switch>
       </BrowserRouter>
     );
