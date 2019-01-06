@@ -13,4 +13,4 @@ Marked.setOptions({
   highlight: (code, lang) => highlight(lang!, code).value
 });
 
-export const getParsedMarkdownText = (text: string) => Marked.parse(text);
+export const parseMarkdownText = (text: string) => Marked.parse(text);

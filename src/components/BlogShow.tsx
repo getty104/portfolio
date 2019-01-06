@@ -1,10 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
-import { getParsedMarkdownText } from "../interactors/getParsedMarkdownText";
 import { getPost } from "../interactors/getPost";
 import { blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
+import { parseMarkdownText } from "../tools/parseMarkdownText";
 import { executeScriptTagsById } from "../tools/scriptTagExecuter";
 import { GetPostQuery } from "../types/graphql";
 import { NotFound } from "./NotFound";
@@ -66,7 +66,7 @@ export class BlogShow extends React.Component<Props, State> {
                 <div
                   className="bgs-Content_description bgs-Markdown"
                   dangerouslySetInnerHTML={{
-                    __html: getParsedMarkdownText(this.state.post.body)
+                    __html: parseMarkdownText(this.state.post.body)
                   }}
                 />
               </div>
