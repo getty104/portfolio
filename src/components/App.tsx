@@ -11,6 +11,7 @@ import {
 } from "../routes";
 import "../styles/index.scss";
 
+import { GA } from "../tools/ga";
 import { BlogIndex } from "./BlogIndex";
 import { BlogShow } from "./BlogShow";
 import { Contact } from "./Contact";
@@ -24,22 +25,52 @@ export class App extends React.Component {
     return (
       <BrowserRouter basename={process.env.PUBLIC_URL}>
         <Switch>
-          <Route exact={true} path={rootPath()} render={() => <Home />} />
+          <Route
+            exact={true}
+            path={rootPath()}
+            render={() => {
+              GA.track();
+              return <Home />;
+            }}
+          />
           <Route
             exact={true}
             path={selfIntroPath()}
-            render={() => <SelfIntro />}
+            render={() => {
+              GA.track();
+              return <SelfIntro />;
+            }}
           />
           <Route
             exact={true}
             path={productsPath()}
-            render={() => <Product />}
+            render={() => {
+              GA.track();
+              return <Product />;
+            }}
           />
-          <Route exact={true} path={contactPath()} render={() => <Contact />} />
-          <Route exact={true} path={blogsPath()} render={() => <BlogIndex />} />
+          <Route
+            exact={true}
+            path={contactPath()}
+            render={() => {
+              GA.track();
+              return <Contact />;
+            }}
+          />
+          <Route
+            exact={true}
+            path={blogsPath()}
+            render={() => {
+              GA.track();
+              return <BlogIndex />;
+            }}
+          />
           <Route
             path={blogPath({})}
-            render={props => <BlogShow {...props} />}
+            render={props => {
+              GA.track();
+              return <BlogShow {...props} />;
+            }}
           />
           <Route render={() => <NotFound />} />
         </Switch>
