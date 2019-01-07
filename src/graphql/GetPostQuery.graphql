@@ -1,4 +1,4 @@
-query GetPostQuery($id: ID!) {
+query GetPostQuery($id: Uuid!) {
   post(id: $id) {
     title
     body

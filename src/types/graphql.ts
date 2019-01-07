@@ -21,7 +21,7 @@ export interface GetPostQuery {
 }
 
 export interface GetPostQueryVariables {
-  id: string;
+  id: any;
 }
 
 /* tslint:disable */
@@ -33,7 +33,7 @@ export interface GetPostQueryVariables {
 
 export interface GetPostsQuery_posts_edges_node {
   __typename: "Post";
-  id: string;
+  id: any;
   title: string;
   insertedAt: any;
 }
