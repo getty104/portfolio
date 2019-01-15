@@ -34,6 +34,36 @@
       }
     }
 
+    table {
+      display: block;
+      width: 100%;
+      overflow: auto;
+      word-break: keep-all;
+      border-collapse: collapse;
+
+      thead {
+        display: table-header-group;
+        vertical-align: middle;
+        border-color: inherit;
+
+        td, th, tr {
+          padding: 8px;
+          border: 1.5px solid #bbbbbb;
+        }
+      }
+
+      tbody {
+        display: table-row-group;
+        vertical-align: middle;
+        border-color: inherit;
+
+        td, th, tr {
+          padding: 8px;
+          border: 1.5px solid #bbbbbb;
+        }
+      }
+    }
+
     pre {
       display: block;
       overflow-x: auto;
