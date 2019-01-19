@@ -15,6 +15,7 @@
     @include animation(bgi-Footer_column 1s ease 1s);
 
     &_column {
+      cursor: pointer;
       width: 100px;
       margin: auto;
       text-align: center;
