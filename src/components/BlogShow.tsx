@@ -1,13 +1,16 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 
+import { Helmet } from "react-helmet";
 import { getPost } from "../interactors/getPost";
-import { blogsPath } from "../routes";
+import { blogPath, blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { parseMarkdownText } from "../tools/parseMarkdownText";
 import { executeScriptTagsById } from "../tools/scriptTagExecuter";
 import { GetPostQuery } from "../types/graphql";
 import { NotFound } from "./NotFound";
+
+import bigImageUrl from "../styles/images/big.jpg";
 
 interface State {
   post: GetPostQuery["post"];
@@ -46,6 +49,26 @@ export class BlogShow extends React.Component<Props, State> {
         <div id="blog">
           {this.state.post && (
             <div>
+              <Helmet>
+                <meta name="twitter:card" content="summary_large_image" />
+                <meta name="twitter:site" content="@getty104" />
+                <meta name="twitter:creator" content="@getty104" />
+                <meta
+                  property="og:url"
+                  content={blogPath({
+                    id: this.props.match.params.id.toString()
+                  })}
+                />
+                <meta property="og:title" content={this.state.post.title} />
+                <meta
+                  property="og:description"
+                  content={this.state.post.body}
+                />
+                <meta
+                  property="og:image"
+                  content={this.state.post!.image || bigImageUrl}
+                />
+              </Helmet>
               <div className="bgs-Content">
                 <div className="bgs-Content_header">
                   <div className="bgs-Content_header-title">
