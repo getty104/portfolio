@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-import bigImageUrl from "../styles/images/big.jpg";
+const bigImageUrl = "/big.jpg";
 
 interface Props {
   title?: string;
