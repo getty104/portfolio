@@ -1,9 +1,10 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { productsPath, rootPath, selfIntroPath } from "../routes";
+import { contactPath, productsPath, rootPath, selfIntroPath } from "../routes";
 import facebook from "../styles/images/facebook.png";
 import github from "../styles/images/github.png";
 import twitter from "../styles/images/twitter.png";
+import { Head } from "./Head";
 
 /* tslint:disable */
 export class Contact extends React.Component {
@@ -14,6 +15,11 @@ export class Contact extends React.Component {
   public render() {
     return (
       <div>
+        <Head
+          title={"コンタクト - Getty's Room"}
+          description={"コンタクト情報です"}
+          url={contactPath()}
+        />
         <div className="ct-Content">
           <div className="ct-Content_title">コンタクト</div>
           <div className="ct-Content_bar" />

@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
 import { contactPath, productsPath, rootPath } from "../routes";
+import { Head } from "./Head";
 
 /* tslint:disable */
 export class SelfIntro extends React.Component {
@@ -11,6 +12,7 @@ export class SelfIntro extends React.Component {
   public render() {
     return (
       <div>
+        <Head title={"自己紹介 - Getty's Room"} description={"Gettyの自己紹介情報です"} url={productsPath()} />
         <div className="si-Content">
           <div className="si-Content_title">自己紹介</div>
           <div className="si-Content_bar" />
