@@ -1,9 +1,10 @@
 import * as getPostsQuery from "../graphql/GetPostsQuery.graphql";
 import { graphQLClient } from "../tools/graphQLClient";
+import { isSnapShot } from "../tools/snapShot";
 import { InteractorResult } from "../types/global";
 import { GetPostsQuery } from "../types/graphql";
 
-const pageSize = 5;
+const pageSize = isSnapShot ? 10000 : 5;
 
 export const getPosts = (page: number): InteractorResult<GetPostsQuery> => {
   return new Promise(resolv =>
