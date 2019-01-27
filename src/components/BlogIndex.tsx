@@ -2,9 +2,10 @@ import * as React from "react";
 import { Link } from "react-router-dom";
 
 import { getPosts } from "../interactors/getPosts";
-import { blogPath } from "../routes";
+import { blogPath, blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { GetPostsQuery } from "../types/graphql";
+import { Head } from "./Head";
 
 interface State {
   posts: GetPostsQuery["posts"];
@@ -29,6 +30,11 @@ export class BlogIndex extends React.Component<{}, State> {
   public render() {
     return (
       <div>
+        <Head
+          title={"Getty's Blog"}
+          description={"Gettyのブログ"}
+          url={blogsPath()}
+        />
         <div className="bgi-Content">
           <div className="bgi-Content_title">ブログ</div>
           <div className="bgi-Content_bar" />

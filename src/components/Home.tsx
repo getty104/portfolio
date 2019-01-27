@@ -1,6 +1,13 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { blogsPath, contactPath, productsPath, selfIntroPath } from "../routes";
+import {
+  blogsPath,
+  contactPath,
+  productsPath,
+  rootPath,
+  selfIntroPath
+} from "../routes";
+import { Head } from "./Head";
 
 export class Home extends React.Component {
   public componentDidMount() {
@@ -10,6 +17,7 @@ export class Home extends React.Component {
   public render() {
     return (
       <div>
+        <Head url={rootPath()} />
         <div className="hm-Content">
           <Link to={selfIntroPath()} className="hm-Content_profile">
             <div className="hm-Content_profile-bar" />

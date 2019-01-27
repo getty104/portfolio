@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Link } from "react-router-dom";
-import { contactPath, rootPath, selfIntroPath } from "../routes";
+import { contactPath, productsPath, rootPath, selfIntroPath } from "../routes";
 import product1 from "../styles/images/product1.png";
 import product2 from "../styles/images/product2.png";
+import { Head } from "./Head";
 
 /* tslint:disable */
 export class Product extends React.Component {
@@ -13,6 +14,7 @@ export class Product extends React.Component {
   public render() {
     return (
       <div>
+        <Head title={"プロダクト - Getty's Room"} description={"Gettyのプロダクト情報です"} url={productsPath()} />
         <div className="pd-Content">
           <div className="pd-Content_title">プロダクト</div>
           <div className="pd-Content_bar" />

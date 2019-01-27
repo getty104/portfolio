@@ -5,21 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="theme-color" content="#000000">
 
-    <script>
-      (function (l) {
-        if (l.search) {
-          var q = {};
-          l.search.slice(1).split('&').forEach(function (v) {
-            var a = v.split('=');
-            q[a[0]] = a[1];
-          });
-          if (q.p !== undefined) {
-            window.history.replaceState(null, null, l.pathname.slice(0, -1) + (q.p || ''));
-          }
-        }
-      }(window.location))
-    </script>
-
     <!--
       manifest.json provides metadata used when your web app is added to the
       homescreen on Android. See https://developers.google.com/web/fundamentals/engage-and-retain/web-app-manifest/
@@ -42,15 +27,6 @@
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="%PUBLIC_URL%/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
-
-    <meta name="description" content="Gettyの部屋。プロダクトや経歴などを公開しています。">
-    <meta name="og:title" content="Getty's Room">
-    <meta name="og:type" content="blog">
-    <meta name="og:url" content="%PUBLIC_URL%">
-    <meta name="og:image" content="https://www.getty104.tk/apple-icon-180x180.png">
-    <meta name="og:description" content="Gettyの部屋">
-    <meta name="twitter:card" content="summary">
-    <meta name="twitter:site" content="@getty104">
 
     <title>Getty's Room</title>
   </head>
