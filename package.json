@@ -6,6 +6,7 @@
   "dependencies": {
     "@types/graphql": "^14.0.3",
     "@types/highlight.js": "^9.12.3",
+    "@types/query-string": "^6.2.0",
     "@types/react-ga": "^2.3.0",
     "@types/react-helmet": "^5.0.8",
     "@types/react-router-dom": "^4.3.1",
@@ -36,6 +37,7 @@
     "postcss-flexbugs-fixes": "3.2.0",
     "postcss-loader": "2.0.8",
     "promise": "8.0.1",
+    "query-string": "^6.2.0",
     "raf": "3.4.0",
     "react": "^16.5.2",
     "react-apollo": "^2.3.1",

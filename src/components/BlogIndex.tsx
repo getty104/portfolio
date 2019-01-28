@@ -1,3 +1,4 @@
+import { parse } from "query-string";
 import * as React from "react";
 import { Link } from "react-router-dom";
 
@@ -12,19 +13,25 @@ interface State {
   currentPage: number;
 }
 
-export class BlogIndex extends React.Component<{}, State> {
-  constructor(props: {}) {
+interface Props {
+  location: {
+    search: string;
+  };
+}
+
+export class BlogIndex extends React.Component<Props, State> {
+  constructor(props: Props) {
     super(props);
     this.state = { posts: null, currentPage: 0 };
-
-    this.goPreviousPage = this.goPreviousPage.bind(this);
-    this.goNextPage = this.goNextPage.bind(this);
     this.setPosts = this.setPosts.bind(this);
   }
 
   public componentDidMount() {
     window.scrollTo(0, 0);
-    this.setPosts(0);
+    const page = parse(this.props.location.search).page;
+    page
+      ? this.setPosts(parseInt(page instanceof Array ? page[0] : page, 10))
+      : this.setPosts(0);
   }
 
   public render() {
@@ -62,28 +69,32 @@ export class BlogIndex extends React.Component<{}, State> {
         </div>
         <div className="bgi-Footer">
           {this.state.posts && this.state.posts.pageInfo.hasPreviousPage && (
-            <a className="bgi-Footer_column" onClick={this.goPreviousPage}>
+            <Link
+              className="bgi-Footer_column"
+              to={{
+                pathname: blogsPath(),
+                search: `?page=${this.state.currentPage - 1}`
+              }}
+              onClick={() => this.setPosts(this.state.currentPage - 1)}
+            >
               前のページ
-            </a>
+            </Link>
           )}
           {this.state.posts && this.state.posts.pageInfo.hasNextPage && (
-            <a className="bgi-Footer_column" onClick={this.goNextPage}>
+            <Link
+              className="bgi-Footer_column"
+              to={{
+                pathname: blogsPath(),
+                search: `?page=${this.state.currentPage + 1}`
+              }}
+              onClick={() => this.setPosts(this.state.currentPage + 1)}
+            >
               次のページ
-            </a>
+            </Link>
           )}
         </div>
       </div>
     );
-  }
-
-  private goPreviousPage() {
-    window.scrollTo(0, 0);
-    this.setPosts(this.state.currentPage - 1);
-  }
-
-  private goNextPage() {
-    window.scrollTo(0, 0);
-    this.setPosts(this.state.currentPage + 1);
   }
 
   private setPosts(page: number) {

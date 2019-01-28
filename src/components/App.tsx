@@ -60,9 +60,9 @@ export class App extends React.Component {
           <Route
             exact={true}
             path={blogsPath()}
-            render={() => {
+            render={props => {
               GA.track();
-              return <BlogIndex />;
+              return <BlogIndex {...props} />;
             }}
           />
           <Route
