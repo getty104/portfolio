@@ -12,7 +12,7 @@ export class SelfIntro extends React.Component {
   public render() {
     return (
       <div>
-        <Head title={"自己紹介 - Getty's Room"} description={"Gettyの自己紹介情報です"} url={productsPath()} />
+        <Head title={"自己紹介"} description={"Gettyの自己紹介情報です"} url={productsPath()} />
         <div className="si-Content">
           <div className="si-Content_title">自己紹介</div>
           <div className="si-Content_bar" />

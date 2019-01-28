@@ -14,7 +14,7 @@ export class Product extends React.Component {
   public render() {
     return (
       <div>
-        <Head title={"プロダクト - Getty's Room"} description={"Gettyのプロダクト情報です"} url={productsPath()} />
+        <Head title={"プロダクト"} description={"Gettyのプロダクト情報です"} url={productsPath()} />
         <div className="pd-Content">
           <div className="pd-Content_title">プロダクト</div>
           <div className="pd-Content_bar" />

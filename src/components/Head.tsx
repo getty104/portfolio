@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Helmet } from "react-helmet";
 
-const bigImageUrl = "/big.jpg";
+const bigImageUrl = "https://www.getty104.tk/big.jpg";
 
 interface Props {
   title?: string;
@@ -22,7 +22,14 @@ export class Head extends React.Component<Props> {
   public render() {
     return (
       <Helmet>
-        <meta property="title" content={this.props.title || defaultTitle} />
+        <meta
+          property="title"
+          content={
+            this.props.title
+              ? `${this.props.title} - ${defaultTitle}`
+              : defaultTitle
+          }
+        />
         <meta
           property="description"
           content={this.props.description || defaultDescription}
@@ -35,7 +42,14 @@ export class Head extends React.Component<Props> {
           content={this.props.url === "/" ? "website" : "article"}
         />
         <meta property="og:url" content={this.props.url} />
-        <meta property="og:title" content={this.props.title || defaultTitle} />
+        <meta
+          property="og:title"
+          content={
+            this.props.title
+              ? `${this.props.title} - ${defaultTitle}`
+              : defaultTitle
+          }
+        />
         <meta
           property="og:description"
           content={this.props.description || defaultDescription}

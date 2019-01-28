@@ -31,7 +31,7 @@ export class BlogIndex extends React.Component<{}, State> {
     return (
       <div>
         <Head
-          title={"Getty's Blog"}
+          title={"ブログ"}
           description={"Gettyのブログ"}
           url={blogsPath()}
         />

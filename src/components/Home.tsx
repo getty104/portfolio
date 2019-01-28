@@ -31,13 +31,13 @@ export class Home extends React.Component {
             <div className="hm-Content_contact-bar" />
             <div className="hm-Content_contact-title">コンタクト</div>
           </Link>
-          <Link to={blogsPath()} className="hm-Content_blog" href="#">
+          <Link to={blogsPath()} className="hm-Content_blog" target="_blank">
             <div className="hm-Content_blog-bar" />
             <div className="hm-Content_blog-title">ブログ</div>
           </Link>
         </div>
         <div className="hm-Footer">
-          <div className="hm-Footer_column">Getty's Room</div>
+          <div className="hm-Footer_column">{`︎©︎ 2018 - ${new Date().getFullYear()} Toshifumi Kiyono`}</div>
         </div>
       </div>
     );
