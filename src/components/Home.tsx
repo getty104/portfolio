@@ -37,7 +37,9 @@ export class Home extends React.Component {
           </Link>
         </div>
         <div className="hm-Footer">
-          <div className="hm-Footer_column">{`︎©︎ 2018 - ${new Date().getFullYear()} Toshifumi Kiyono`}</div>
+          <div className="hm-Footer_column">
+            &copy; {`2018 - ${new Date().getFullYear()} Toshifumi Kiyono`}
+          </div>
         </div>
       </div>
     );
