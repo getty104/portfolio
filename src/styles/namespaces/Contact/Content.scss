@@ -41,6 +41,17 @@
       display: block;
       text-align: center;
       font-size: 1.6rem;
+
+      @include keyframes(ct-Content_description-category) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(ct-Content_description-category 1s ease 1s);
     }
 
     &_description {
