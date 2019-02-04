@@ -65,6 +65,23 @@
 
         @include animation(ct-Content_description-image 1s ease 1s);
       }
+
+      &-kyash {
+        margin: auto 20px;
+        width: 80px;
+        height: 80px;
+
+        @include keyframes(ct-Content_description-kyash) {
+          from {
+            opacity: 0;
+          }
+          to {
+            opacity: 1;
+          }
+        }
+
+        @include animation(ct-Content_description-kyash 1s ease 1s);
+      }
     }
   }
 }
