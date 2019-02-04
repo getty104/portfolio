@@ -36,8 +36,15 @@
       @include animation(ct-Content_bar 1s);
     }
 
-    &_description {
+    &_category {
       margin-top: 80px;
+      display: block;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+
+    &_description {
+      margin-top: 40px;
       display: flex;
       flex-flow: row wrap;
       justify-content: center;
