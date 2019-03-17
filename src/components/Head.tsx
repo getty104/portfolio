@@ -14,48 +14,32 @@ const defaultTitle = "Getty's Room";
 const defaultDescription =
   "Gettyの部屋。プロダクトや経歴などを公開しています。";
 
-export class Head extends React.Component<Props> {
-  constructor(props: Props) {
-    super(props);
-  }
-
-  public render() {
-    return (
-      <Helmet>
-        <meta
-          property="title"
-          content={
-            this.props.title
-              ? `${this.props.title} - ${defaultTitle}`
-              : defaultTitle
-          }
-        />
-        <meta
-          property="description"
-          content={this.props.description || defaultDescription}
-        />
-        <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:site" content="@getty104" />
-        <meta name="twitter:creator" content="@getty104" />
-        <meta
-          property="og:type"
-          content={this.props.url === "/" ? "website" : "article"}
-        />
-        <meta property="og:url" content={this.props.url} />
-        <meta
-          property="og:title"
-          content={
-            this.props.title
-              ? `${this.props.title} - ${defaultTitle}`
-              : defaultTitle
-          }
-        />
-        <meta
-          property="og:description"
-          content={this.props.description || defaultDescription}
-        />
-        <meta property="og:image" content={this.props.image || bigImageUrl} />
-      </Helmet>
-    );
-  }
-}
+export const Head = (props: Props) => (
+  <Helmet>
+    <meta
+      property="title"
+      content={props.title ? `${props.title} - ${defaultTitle}` : defaultTitle}
+    />
+    <meta
+      property="description"
+      content={props.description || defaultDescription}
+    />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@getty104" />
+    <meta name="twitter:creator" content="@getty104" />
+    <meta
+      property="og:type"
+      content={props.url === "/" ? "website" : "article"}
+    />
+    <meta property="og:url" content={props.url} />
+    <meta
+      property="og:title"
+      content={props.title ? `${props.title} - ${defaultTitle}` : defaultTitle}
+    />
+    <meta
+      property="og:description"
+      content={props.description || defaultDescription}
+    />
+    <meta property="og:image" content={props.image || bigImageUrl} />
+  </Helmet>
+);

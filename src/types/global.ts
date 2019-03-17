@@ -3,3 +3,5 @@ export type InteractorResult<Data> = Promise<{
   data?: Data;
   errors?: any;
 }>;
+
+export type ActionType<State> = (state: State) => State;

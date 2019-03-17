@@ -20,61 +20,67 @@ import { NotFound } from "./NotFound";
 import { Product } from "./Product";
 import { SelfIntro } from "./SelfIntro";
 
-export class App extends React.Component {
-  public render() {
-    return (
-      <BrowserRouter basename={process.env.PUBLIC_URL}>
-        <Switch>
-          <Route
-            exact={true}
-            path={rootPath()}
-            render={() => {
-              GA.track();
-              return <Home />;
-            }}
-          />
-          <Route
-            exact={true}
-            path={selfIntroPath()}
-            render={() => {
-              GA.track();
-              return <SelfIntro />;
-            }}
-          />
-          <Route
-            exact={true}
-            path={productsPath()}
-            render={() => {
-              GA.track();
-              return <Product />;
-            }}
-          />
-          <Route
-            exact={true}
-            path={contactPath()}
-            render={() => {
-              GA.track();
-              return <Contact />;
-            }}
-          />
-          <Route
-            exact={true}
-            path={blogsPath()}
-            render={props => {
-              GA.track();
-              return <BlogIndex {...props} />;
-            }}
-          />
-          <Route
-            path={blogPath({})}
-            render={props => {
-              GA.track();
-              return <BlogShow {...props} />;
-            }}
-          />
-          <Route render={() => <NotFound />} />
-        </Switch>
-      </BrowserRouter>
-    );
-  }
-}
+const handlePageChange = () => {
+  window.scrollTo(0, 0);
+  GA.track();
+};
+
+export const App = () => (
+  <BrowserRouter basename={process.env.PUBLIC_URL}>
+    <Switch>
+      <Route
+        exact={true}
+        path={rootPath()}
+        render={() => {
+          handlePageChange();
+          return <Home />;
+        }}
+      />
+      <Route
+        exact={true}
+        path={selfIntroPath()}
+        render={() => {
+          handlePageChange();
+          return <SelfIntro />;
+        }}
+      />
+      <Route
+        exact={true}
+        path={productsPath()}
+        render={() => {
+          handlePageChange();
+          return <Product />;
+        }}
+      />
+      <Route
+        exact={true}
+        path={contactPath()}
+        render={() => {
+          handlePageChange();
+          return <Contact />;
+        }}
+      />
+      <Route
+        exact={true}
+        path={blogsPath()}
+        render={props => {
+          handlePageChange();
+          return <BlogIndex {...props} />;
+        }}
+      />
+      <Route
+        path={blogPath({})}
+        render={props => {
+          handlePageChange();
+          return <BlogShow {...props} />;
+        }}
+      />
+      <Route
+        render={() => {
+          handlePageChange();
+          return <NotFound />;
+        }}
+      />
+    </Switch>
+  </BrowserRouter>
+);
