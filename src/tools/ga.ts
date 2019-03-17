@@ -1,10 +1,13 @@
 import * as ReactGA from "react-ga";
 import { isSnapShot } from "./snapShot";
 
+const trackID =
+  process.env.NODE_ENV === "development" ? "UA-130595381-2" : "UA-130595381-1";
+
 export class GA {
   public static init() {
     !isSnapShot &&
-      ReactGA.initialize("UA-130595381-1", {
+      ReactGA.initialize(trackID, {
         debug: process.env.NODE_ENV === "development"
       });
   }
