@@ -3,7 +3,7 @@ import { graphQLClient } from "../tools/graphQLClient";
 import { InteractorResult } from "../types/global";
 import { GetPostQuery } from "../types/graphql";
 
-export const getPost = (id: number): InteractorResult<GetPostQuery> => {
+export const getPost = (id: string): InteractorResult<GetPostQuery> => {
   return new Promise(resolv =>
     graphQLClient
       .query<GetPostQuery>({

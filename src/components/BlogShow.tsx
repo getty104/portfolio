@@ -17,14 +17,15 @@ interface State {
 }
 
 interface Actions {
+  init: () => ActionType<State>;
   setPost: (posts: GetPostQuery["post"]) => ActionType<State>;
-  setIsInitialized: (isInitialized: boolean) => ActionType<State>;
+  initialized: () => ActionType<State>;
 }
 
 interface Props {
   match: {
     params: {
-      id: number;
+      id: string;
     };
   };
 }
@@ -35,32 +36,43 @@ const initialState: State = {
 };
 
 const actions: Actions = {
+  init: () => (_: State) => initialState,
   setPost: (post: GetPostQuery["post"]) => (state: State) => ({
     ...state,
     post
   }),
-  setIsInitialized: (isInitialized: boolean) => (state: State) => ({
+  initialized: () => (state: State) => ({
     ...state,
-    isInitialized
+    isInitialized: true
   })
 };
 
 const reducer = (state: State, action: ActionType<State>) => action(state);
 
-export const BlogShow = (props: Props) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
-
-  React.useEffect(() => {
-    getPost(props.match.params.id).then(result => {
+const createEffects = (
+  _: State,
+  dispatch: React.Dispatch<ActionType<State>>
+) => ({
+  handleChangeId: (id: string) => () => {
+    getPost(id).then(result => {
       result.success &&
         result.data &&
         result.data.post &&
         dispatch(actions.setPost(result.data.post));
-      dispatch(actions.setIsInitialized(true));
+      dispatch(actions.initialized());
       setTimeout(() => executeScriptTagsById("blog"), 100);
-      return () => dispatch(actions.setIsInitialized(false));
+      return () => dispatch(actions.init());
     });
-  }, [props.match.params.id]);
+  }
+});
+
+export const BlogShow = (props: Props) => {
+  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const effects = createEffects(state, dispatch);
+
+  React.useEffect(effects.handleChangeId(props.match.params.id), [
+    props.match.params.id
+  ]);
 
   if (state.isInitialized && !state.post) {
     return <NotFound />;
@@ -73,7 +85,7 @@ export const BlogShow = (props: Props) => {
               title={state.post.title}
               description={state.post.body}
               image={state.post.image}
-              url={blogPath({ id: props.match.params.id.toString() })}
+              url={blogPath({ id: props.match.params.id })}
             />
             <div className="bgs-Content">
               <div className="bgs-Content_header">
