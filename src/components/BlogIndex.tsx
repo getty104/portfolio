@@ -54,21 +54,29 @@ const actions: Actions = {
 
 const reducer = (state: State, action: ActionType<State>) => action(state);
 
-export const BlogIndex = (props: Props) => {
-  const [state, dispatch] = React.useReducer(
-    reducer,
-    initialState,
-    actions.init(props)
-  );
-
-  React.useEffect(() => {
+const createEffects = (
+  state: State,
+  dispatch: React.Dispatch<ActionType<State>>
+) => ({
+  handleChangeCurrentPage: () => () => {
     getPosts(state.currentPage).then(
       result =>
         result.data &&
         result.data.posts &&
         dispatch(actions.setPosts(result.data.posts))
     );
-  }, [state.currentPage]);
+  }
+});
+
+export const BlogIndex = (props: Props) => {
+  const [state, dispatch] = React.useReducer(
+    reducer,
+    initialState,
+    actions.init(props)
+  );
+  const effects = createEffects(state, dispatch);
+
+  React.useEffect(effects.handleChangeCurrentPage(), [state.currentPage]);
 
   return (
     <div>
