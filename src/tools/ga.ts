@@ -2,7 +2,7 @@ import * as ReactGA from "react-ga";
 import { isSnapShot } from "./snapShot";
 
 const trackID =
-  process.env.NODE_ENV === "development" ? "UA-130595381-2" : "UA-130595381-1";
+  process.env.NODE_ENV === "production" ? "UA-130595381-1" : "UA-130595381-2";
 
 export class GA {
   public static init() {
