@@ -5,6 +5,7 @@ import { Link } from "react-router-dom";
 import { getPosts } from "../interactors/getPosts";
 import { blogPath, blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
+import { reducer } from "../tools/reducer";
 import { ActionType } from "../types/global";
 import { GetPostsQuery } from "../types/graphql";
 import { Head } from "./Head";
@@ -52,8 +53,6 @@ const actions: Actions = {
   })
 };
 
-const reducer = (state: State, action: ActionType<State>) => action(state);
-
 const createEffects = (
   state: State,
   dispatch: React.Dispatch<ActionType<State>>
@@ -70,7 +69,7 @@ const createEffects = (
 
 export const BlogIndex = (props: Props) => {
   const [state, dispatch] = React.useReducer(
-    reducer,
+    reducer<State>(),
     initialState,
     actions.init(props)
   );

@@ -5,6 +5,7 @@ import { getPost } from "../interactors/getPost";
 import { blogPath, blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { parseMarkdownText } from "../tools/parseMarkdownText";
+import { reducer } from "../tools/reducer";
 import { executeScriptTagsById } from "../tools/scriptTagExecuter";
 import { ActionType } from "../types/global";
 import { GetPostQuery } from "../types/graphql";
@@ -47,8 +48,6 @@ const actions: Actions = {
   })
 };
 
-const reducer = (state: State, action: ActionType<State>) => action(state);
-
 const createEffects = (
   _: State,
   dispatch: React.Dispatch<ActionType<State>>
@@ -67,7 +66,7 @@ const createEffects = (
 });
 
 export const BlogShow = (props: Props) => {
-  const [state, dispatch] = React.useReducer(reducer, initialState);
+  const [state, dispatch] = React.useReducer(reducer<State>(), initialState);
   const effects = createEffects(state, dispatch);
 
   React.useEffect(effects.handleChangeId(props.match.params.id), [
