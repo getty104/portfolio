@@ -40,11 +40,12 @@
       margin-top: 40px;
       display: flex;
       flex-flow: row wrap;
+      justify-content: flex-end;
 
       &-image {
         margin: auto;
-        width: 320px;
-        height: 320px;
+        width: 400px;
+        height: 400px;
         background-image: url("./images/big.jpg");
         background-size: contain;
         background-repeat: no-repeat; 
@@ -80,6 +81,48 @@
         }
 
         @include animation(si-Content_description-text 1s ease 1s);
+      }
+    }
+
+    &_resume {
+      margin: auto;
+      margin-top: 40px;
+      display: block;
+      max-width: 400px;
+
+      @include keyframes(si-Content_resume) {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @include animation(si-Content_resume 1s ease 1s);
+    }
+
+    &_resumeTitle {
+      text-align: center;
+      font-size: 3.2rem;
+      color: #000;
+      margin-bottom: 24px;
+    }
+
+    &_resumeItem {
+      display: flex;
+      flex-flow: row wrap;
+      font-size: 1.0rem;
+      justify-content: flex-end;
+      color: #000;
+      margin-bottom: 12px;
+
+      &-year {
+        width: 40%;
+      }
+
+      &-title {
+        width: 50%;
       }
     }
   }
