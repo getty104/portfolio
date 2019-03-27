@@ -48,10 +48,7 @@ const actions: Actions = {
   })
 };
 
-const createEffects = (
-  _: State,
-  dispatch: React.Dispatch<ActionType<State>>
-) => ({
+const createEffects = (dispatch: React.Dispatch<ActionType<State>>) => ({
   handleChangeId: (id: string) => () => {
     getPost(id).then(result => {
       result.success &&
@@ -67,7 +64,7 @@ const createEffects = (
 
 export const BlogShow = (props: Props) => {
   const [state, dispatch] = React.useReducer(reducer<State>(), initialState);
-  const effects = createEffects(state, dispatch);
+  const effects = createEffects(dispatch);
 
   React.useEffect(effects.handleChangeId(props.match.params.id), [
     props.match.params.id

@@ -53,12 +53,9 @@ const actions: Actions = {
   })
 };
 
-const createEffects = (
-  state: State,
-  dispatch: React.Dispatch<ActionType<State>>
-) => ({
-  handleChangeCurrentPage: () => () => {
-    getPosts(state.currentPage).then(
+const createEffects = (dispatch: React.Dispatch<ActionType<State>>) => ({
+  handleChangeCurrentPage: (currentPage: number) => () => {
+    getPosts(currentPage).then(
       result =>
         result.data &&
         result.data.posts &&
@@ -73,9 +70,11 @@ export const BlogIndex = (props: Props) => {
     initialState,
     actions.init(props)
   );
-  const effects = createEffects(state, dispatch);
+  const effects = createEffects(dispatch);
 
-  React.useEffect(effects.handleChangeCurrentPage(), [state.currentPage]);
+  React.useEffect(effects.handleChangeCurrentPage(state.currentPage), [
+    state.currentPage
+  ]);
 
   return (
     <div>
