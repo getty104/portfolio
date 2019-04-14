@@ -1,8 +1,7 @@
 import * as React from "react";
-import { Link } from "react-router-dom";
 
 import { getPost } from "../interactors/getPost";
-import { blogPath, blogsPath } from "../routes";
+import { blogPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { parseMarkdownText } from "../tools/parseMarkdownText";
 import { reducer } from "../tools/reducer";
@@ -106,11 +105,6 @@ export const BlogShow = (props: Props) => {
                   __html: parseMarkdownText(state.post.body)
                 }}
               />
-            </div>
-            <div className="bgs-Footer">
-              <Link to={blogsPath()} className="bgs-Footer_column">
-                一覧へ
-              </Link>
             </div>
           </div>
         )}
