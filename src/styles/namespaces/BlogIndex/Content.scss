@@ -55,12 +55,14 @@
 
     &_item {
       margin-bottom: 32px;
+      padding: 0 8px;
       text-align: center;
 
       &-title {
         font-size: 1.8rem;
         margin-bottom: 8px;
         text-decoration: none;
+        word-break: break-all;
 
         &:visited {
           color: inherit;
