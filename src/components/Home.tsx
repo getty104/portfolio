@@ -25,7 +25,7 @@ export const Home = () => (
         <div className="hm-Content_contact-bar" />
         <div className="hm-Content_contact-title">コンタクト</div>
       </Link>
-      <Link to={blogsPath()} className="hm-Content_blog" target="_blank">
+      <Link to={"https://blog.getty104.tk/"} className="hm-Content_blog" target="_blank">
         <div className="hm-Content_blog-bar" />
         <div className="hm-Content_blog-title">ブログ</div>
       </Link>
