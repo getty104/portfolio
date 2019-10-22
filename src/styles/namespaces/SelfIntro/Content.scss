@@ -57,7 +57,7 @@
         99% {
           @include bar-side-active(#52D6FF, #D152FF);
           position: absolute;
-          top: -500px;
+          top: -515px;
           left: 0;
           right: 0;
           bottom: 0;
@@ -66,7 +66,6 @@
         
         100% {
           @include bar-side-active(#52D6FF, #D152FF);
-          top: -500px;
         }
       }
 
