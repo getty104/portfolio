@@ -5,3 +5,6 @@ export type InteractorResult<Data> = Promise<{
 }>;
 
 export type ActionType<State> = (state: State) => State;
+export type EffectType<
+  ResultType extends void | (() => void)
+> = () => ResultType;

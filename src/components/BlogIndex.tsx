@@ -6,7 +6,7 @@ import { getPosts } from "../interactors/getPosts";
 import { blogPath, blogsPath } from "../routes";
 import { formatDate } from "../tools/formatDate";
 import { reducer } from "../tools/reducer";
-import { ActionType } from "../types/global";
+import { ActionType, EffectType } from "../types/global";
 import { GetPostsQuery } from "../types/graphql";
 import { Head } from "./Head";
 
@@ -21,6 +21,10 @@ interface Actions {
   setCurrentPage: (currentPage: number) => ActionType<State>;
 }
 
+interface Effects {
+  handleChangeCurrentPage: (currentPage: number) => EffectType<void>;
+}
+
 interface Props {
   location: {
     search: string;
@@ -33,7 +37,7 @@ const initialState: State = {
 };
 
 const actions: Actions = {
-  init: (props: Props) => (state: State) => {
+  init: props => state => {
     const params = parse(props.location.search).page;
     const currentPage = params
       ? parseInt(params instanceof Array ? params[0] : params, 10)
@@ -43,18 +47,20 @@ const actions: Actions = {
       currentPage
     };
   },
-  setPosts: (posts: GetPostsQuery["posts"]) => (state: State) => ({
+  setPosts: posts => state => ({
     ...state,
     posts
   }),
-  setCurrentPage: (currentPage: number) => (state: State) => ({
+  setCurrentPage: currentPage => state => ({
     ...state,
     currentPage
   })
 };
 
-const createEffects = (dispatch: React.Dispatch<ActionType<State>>) => ({
-  handleChangeCurrentPage: (currentPage: number) => () => {
+const createEffects = (
+  dispatch: React.Dispatch<ActionType<State>>
+): Effects => ({
+  handleChangeCurrentPage: currentPage => () => {
     getPosts(currentPage).then(
       result =>
         result.data &&
