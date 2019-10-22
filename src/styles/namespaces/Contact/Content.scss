@@ -18,22 +18,51 @@
         }
       }
 
-      @include animation(ct-Content_title 1s ease 1s);
+      @include animation(ct-Content_title 1s ease 2s);
     }
 
     &_bar {
+      display: block;
       @include keyframes(ct-Content_bar) {
-        from {
+        0% {
           @include bar-side-active(#FF7A52, #80FF52);
+          position: absolute;
+          margin: auto;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
           transform: rotate(90deg);
         }
-        to {
+
+        50% {
           @include bar-side-active(#FF7A52, #80FF52);
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
           transform: rotate(0deg);
+        }
+
+        99% {
+          @include bar-side-active(#FF7A52, #80FF52);
+          position: absolute;
+          top: -500px;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          margin: auto;
+        }
+        
+        100% {
+          @include bar-side-active(#FF7A52, #80FF52);
+          top: -500px;
         }
       }
 
-      @include animation(ct-Content_bar 1s);
+      @include animation(ct-Content_bar 2s);
     }
 
     &_category {
@@ -51,7 +80,7 @@
         }
       }
 
-      @include animation(ct-Content_description-category 1s ease 1s);
+      @include animation(ct-Content_description-category 1s ease 2s);
     }
 
     &_description {
@@ -74,7 +103,7 @@
           }
         }
 
-        @include animation(ct-Content_description-image 1s ease 1s);
+        @include animation(ct-Content_description-image 1s ease 2s);
       }
 
       &-kyash {
@@ -91,7 +120,7 @@
           }
         }
 
-        @include animation(ct-Content_description-kyash 1s ease 1s);
+        @include animation(ct-Content_description-kyash 1s ease 2s);
       }
     }
   }
