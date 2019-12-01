@@ -60,11 +60,13 @@ export const Product = () => (
       <div className="pd-Content_description">
         <div className="pd-Content_description-other">
           <h2>スキルセット</h2>
-          言語：Ruby, TypeScript, SQL, Elixir, Java, Solidity, python3, C++{" "}
+          言語：Ruby, TypeScript, SQL, Elixir, Java, Solidity, python3, C++
           <br />
           フレームワーク： Rails, React, hyperapp, Phoenix <br />
-          ツール： BigQuery, Docker, Vagrant, GraphQL, ServiceWorker <br />
-          最近は関数型言語とドメイン駆動設計に興味があります。
+          ツール： BigQuery, Docker, Vagrant, GraphQL, ServiceWorker,
+          TreasureData, Terraform, Chef <br />
+          最近は関数型言語とドメイン駆動設計,
+          クリーンアーキテクチャに興味があります。
         </div>
       </div>
     </div>
