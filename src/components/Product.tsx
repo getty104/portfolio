@@ -65,8 +65,7 @@ export const Product = () => (
           フレームワーク： Rails, React, hyperapp, Phoenix <br />
           ツール： BigQuery, Docker, Vagrant, GraphQL, ServiceWorker,
           TreasureData, Terraform, Chef <br />
-          最近は関数型言語とドメイン駆動設計,
-          クリーンアーキテクチャに興味があります。
+          最近は関数型言語とドメイン駆動設計, クリーンアーキテクチャに興味があります。
         </div>
       </div>
     </div>
