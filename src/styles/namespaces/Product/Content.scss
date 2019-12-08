@@ -18,49 +18,23 @@
         }
       }
 
-      @include animation(pd-Content_title 1s ease 2s);
+      @include animation(pd-Content_title 1s ease 1s);
     }
 
     &_bar {
       @include keyframes(pd-Content_bar) {
-        0% {
+        from {
           @include bar-side-active(#D152FF, #FF7A52);
-          position: absolute;
-          margin: auto;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
           transform: rotate(90deg);
         }
 
-        50% {
+        to {
           @include bar-side-active(#D152FF, #FF7A52);
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
           transform: rotate(0deg);
-        }
-
-        99% {
-          @include bar-side-active(#D152FF, #FF7A52);
-          position: absolute;
-          top: -515px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-        }
-        
-        100% {
-          @include bar-side-active(#D152FF, #FF7A52);
         }
       }
 
-      @include animation(pd-Content_bar 2s);
+      @include animation(pd-Content_bar 1s);
     }
 
     &_description {
@@ -101,7 +75,7 @@
           }
         }
 
-        @include animation(pd-Content_description-text 1s ease 2s);
+        @include animation(pd-Content_description-text 1s ease 1s);
       }
 
       &-image {
@@ -112,14 +86,14 @@
           border: solid;
           border-color: #888;
           border-width: 1px;
-          @include animation(pd-Content_description-image 1s ease 2s);
+          @include animation(pd-Content_description-image 1s ease 1s);
         }
 
         @include viewport-s {
           img {
             display: block;
             margin: auto;
-            @include animation(pd-Content_description-image 1s ease 2s);
+            @include animation(pd-Content_description-image 1s ease 1s);
           }
         }
 
@@ -155,7 +129,7 @@
           }
         }
 
-        @include animation(pd-Content_description-other 1s ease 2s);
+        @include animation(pd-Content_description-other 1s ease 1s);
       }
     }
   }

@@ -18,7 +18,7 @@
         }
       }
 
-      @include animation(si-Content_title 1s ease 2s);
+      @include animation(si-Content_title 1s ease 1s);
     }
 
     &_bar {
@@ -31,45 +31,9 @@
           @include bar-side-active(#52D6FF, #D152FF);
           transform: rotate(0deg);
         }
-
-        0% {
-          @include bar-side-active(#52D6FF, #D152FF);
-          position: absolute;
-          margin: auto;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          transform: rotate(90deg);
-        }
-
-        50% {
-          @include bar-side-active(#52D6FF, #D152FF);
-          position: absolute;
-          top: 0;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-          transform: rotate(0deg);
-        }
-
-        99% {
-          @include bar-side-active(#52D6FF, #D152FF);
-          position: absolute;
-          top: -515px;
-          left: 0;
-          right: 0;
-          bottom: 0;
-          margin: auto;
-        }
-        
-        100% {
-          @include bar-side-active(#52D6FF, #D152FF);
-        }
       }
 
-      @include animation(si-Content_bar 2s);
+      @include animation(si-Content_bar 1s);
     }
 
     &_description {
@@ -84,7 +48,7 @@
         height: 400px;
         background-image: url("./images/big.jpg");
         background-size: contain;
-        background-repeat: no-repeat; 
+        background-repeat: no-repeat;
         @include keyframes(si-Content_description-image) {
           from {
             opacity: 0;
@@ -94,7 +58,7 @@
           }
         }
 
-        @include animation(si-Content_description-image 1s ease 2s);
+        @include animation(si-Content_description-image 1s ease 1s);
       }
 
       &-text {
@@ -116,7 +80,7 @@
           }
         }
 
-        @include animation(si-Content_description-text 1s ease 2s);
+        @include animation(si-Content_description-text 1s ease 1s);
       }
     }
 
@@ -135,7 +99,7 @@
         }
       }
 
-      @include animation(si-Content_resume 1s ease 2s);
+      @include animation(si-Content_resume 1s ease 1s);
     }
 
     &_resumeTitle {
