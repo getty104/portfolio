@@ -20,9 +20,10 @@ export const Home = () => (
         <div className="hm-Content_contact-title">コンタクト</div>
       </Link>
       <a
-        href="https://blog.getty104.tk/"
+        href="https://note.com/getty104"
         className="hm-Content_blog"
         target="_blank"
+        rel="noreferer noopener"
       >
         <div className="hm-Content_blog-bar" />
         <div className="hm-Content_blog-title">ブログ</div>
