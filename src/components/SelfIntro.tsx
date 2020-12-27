@@ -16,8 +16,6 @@ export const SelfIntro = () => (
       <div className="si-Content_description">
         <div className="si-Content_description-image" />
         <div className="si-Content_description-text">
-          名前：清野隼史 <br />
-          身長：161センチ <br />
           1996年4月13日生まれ。東京都出身。 <br />
           2015年に早稲田大学基幹理工学部に入学。
           <br />
@@ -30,7 +28,11 @@ export const SelfIntro = () => (
       <div className="si-Content_resume">
         <div className="si-Content_resumeTitle">履歴</div>
         <div className="si-Content_resumeItem">
-          <div className="si-Content_resumeItem-year">2019/04 - 現在</div>
+          <div className="si-Content_resumeItem-year">2020/08 - 現在</div>
+          <div className="si-Content_resumeItem-title">Increments株式会社</div>
+        </div>
+        <div className="si-Content_resumeItem">
+          <div className="si-Content_resumeItem-year">2019/04 - 2020/07</div>
           <div className="si-Content_resumeItem-title">株式会社エイチーム</div>
         </div>
         <div className="si-Content_resumeItem">
