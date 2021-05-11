@@ -46,7 +46,8 @@ export const Product = () => (
         <div className="pd-Content_description-text">
           <h2>穹図書館蒼</h2>
           完全な個人開発 <br />
-          バックエンドはRails、フロントはReact、スタイルはCSS in JSのEmotionを使っています。
+          バックエンドはRails、フロントはReact、スタイルはCSS in
+          JSのEmotionを使っています。
         </div>
         <a
           href="https://soukyu.blue"

@@ -145,5 +145,8 @@
     "presets": [
       "react-app"
     ]
+  },
+  "resolutions": {
+    "@types/react": "^16.12.0"
   }
 }
