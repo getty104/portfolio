@@ -44,13 +44,12 @@ export const Product = () => (
       </div>
       <div className="pd-Content_description">
         <div className="pd-Content_description-text">
-          <h2>Life Squad</h2>
-          Rails + React + TypeScriptで実装。 <br />
-          知人とともに作成しました。 <br />
-          主にサーバーサイド、インフラ、ビジネスロジック、フロントエンドの実装を担当しました。
+          <h2>穹図書館蒼</h2>
+          完全な個人開発 <br />
+          バックエンドはRails、フロントはReact、スタイルはCSS in JSのEmotionを使っています。
         </div>
         <a
-          href="https://www.life-squad.jp"
+          href="https://soukyu.blue"
           target="_blank"
           className="pd-Content_description-image"
         >
